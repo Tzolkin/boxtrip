@@ -1,0 +1,25 @@
+# rubocop config files for small Rails4/Ruby2 project
+# blog post: http://joanswork.com/rubocop-rails-getting-started/
+
+# .rubocop.yml
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+  Exclude:
+    - db/schema.rb
+
+LineLength:
+  Max: 120 # revisit
+
+MethodLength:
+  Max: 20 # revisit
+
+HasAndBelongsToMany: # being used for a reason
+  Enabled: false
+
+EmptyLinesAroundBody: # prefer empty line for legibility
+  Enabled: false
+
+Documentation: # later - part of bigger project
+  Enabled: false

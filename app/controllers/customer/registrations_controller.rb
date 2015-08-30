@@ -1,0 +1,4 @@
+class Customer
+  class RegistrationsController < Devise::RegistrationsController
+  end
+end

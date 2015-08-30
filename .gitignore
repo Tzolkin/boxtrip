@@ -1,0 +1,31 @@
+.keep
+
+Gemfile.lock
+*.DS_Store
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+.ruby-gemset
+.ruby-version
+/coverage
+!public/assets/alfa
+!public/assets/logos
+!public/assets/tmp
+!public/assets/bg
+!public/assets/icons
+!public/assets/bootstrap
+public/assets/js/
+/public/cms/uploads/
+/public/robots.txt
+/public/human.txt
+/public/sitemap*.*
+
+/config/application.yml
+/config/db_restore.yml
+/config/initializers/enable_sql_logs.rb
