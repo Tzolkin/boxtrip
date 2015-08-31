@@ -8,8 +8,10 @@ Rails.application.routes.draw do
              }
 
   root 'landing#index'
+  get 'privacy', to: 'landing#privacy'
 
   namespace :customer do
     get '/:id', to: 'dashboard#home'
+    resources
   end
 end

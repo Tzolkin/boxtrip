@@ -17,7 +17,11 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.class == Customer
-      customer_path(current_customer.id)
+      if current_customer.sign_in_count == 1
+        customer_services_path
+      else
+        customer_path(current_customer.id)
+      end
     elsif resource.class == Partner
       partner_path
     end
