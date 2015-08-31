@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830223229) do
+ActiveRecord::Schema.define(version: 20150831072240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "floor"
+    t.boolean  "lift"
+    t.integer  "building_type_id"
+    t.integer  "destination_type_id"
+    t.integer  "btrip_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "btrips", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.datetime "moving_date"
+    t.string   "btrip_type",  default: "quote"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "building_types", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "name"
@@ -41,5 +65,22 @@ ActiveRecord::Schema.define(version: 20150830223229) do
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
+
+  create_table "destination_types", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "extra_services", force: :cascade do |t|
+    t.integer  "btrip_id"
+    t.boolean  "origin_flown"
+    t.boolean  "destination_flown"
+    t.boolean  "inventory_fragile"
+    t.boolean  "trash"
+    t.boolean  "packaging"
+    t.boolean  "unpaked"
+    t.boolean  "accompany_supplier"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
