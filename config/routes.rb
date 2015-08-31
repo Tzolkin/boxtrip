@@ -7,6 +7,8 @@ Rails.application.routes.draw do
                confirmations: 'customer/confirmations'
              }
 
+  root 'landing#index'
+
   namespace :customer do
     get '/:id', to: 'dashboard#home'
   end

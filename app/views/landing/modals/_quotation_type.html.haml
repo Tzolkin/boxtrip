@@ -1,0 +1,22 @@
+/ Modal 4
+#quotation_type.modal.fade.bs-example-modal-sm.modal-mudanza{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header.mudanza-header-modal
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title.mudanza-modal-title Mudanza:
+      .modal-body
+        .row.row-registry.row-types
+          .col-md-6
+            %button.btn.btn-mudanza.btn-type-mud.btn-rapida
+              %i.fa.fa-bolt>
+                Cotización
+              %strong Rápida
+          .col-md-6
+            %button.btn.btn-mudanza.btn-type-mud.btn-amplia
+              %i.fa.fa-search>
+                Cotización
+              %strong Amplia
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Cerrar

@@ -1,0 +1,6 @@
+- flash.each do |level, messages|
+  %div{ class: "#{ flash_class(level) }" }
+    - messages = [messages] if messages.class == String
+    - if messages.present?
+      - messages.each do |msg|
+        = (raw msg.last.match(/\.$/) ? msg : "#{msg}.") if msg.present?

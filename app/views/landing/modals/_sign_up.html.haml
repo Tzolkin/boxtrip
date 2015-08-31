@@ -1,0 +1,13 @@
+/ Modal 2
+#sign_up.modal.fade.bs-example-modal-sm.modal-mudanza{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header.mudanza-header-modal
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", type: "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title.mudanza-modal-title Regístrate:
+      .modal-body
+        .row.row-registry
+          %p ¡Vamos! sólo registrate para realizar una cotización de tu traslado.
+          %hr/
+          = render partial: '/customer/partials/sign_up'
