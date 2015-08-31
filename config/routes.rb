@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   get 'privacy', to: 'landing#privacy'
 
   namespace :customer do
-    get '/:id', to: 'dashboard#home'
-    resources
+    scope ':customer_id' do
+      get '/', to: 'dashboard#home'
+      resources :btrips do
+      end
+    end
   end
 end
