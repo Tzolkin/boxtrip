@@ -5,6 +5,8 @@ gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.15.35'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -22,7 +24,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'byebug'
   gem 'mailcatcher'
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
 end
 
 group :test do

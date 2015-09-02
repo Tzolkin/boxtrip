@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831072240) do
+ActiveRecord::Schema.define(version: 20150902043452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,57 @@ ActiveRecord::Schema.define(version: 20150831072240) do
     t.boolean  "accompany_supplier"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "partner_addresses", force: :cascade do |t|
+    t.integer  "partner_id"
+    t.string   "street"
+    t.string   "internal_number"
+    t.string   "suburb"
+    t.string   "state"
+    t.string   "municipality"
+    t.string   "postal_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "paternal_name"
+    t.string   "maternal_name"
+    t.string   "lada"
+    t.string   "number"
+    t.date     "birthdate"
+    t.boolean  "has_vehicle"
+    t.boolean  "bank_account"
+    t.boolean  "smartphone"
+    t.boolean  "good_health"
+    t.string   "hear_about_us"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "partners", ["email"], name: "index_partners_on_email", unique: true, using: :btree
+  add_index "partners", ["reset_password_token"], name: "index_partners_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vehicles", force: :cascade do |t|
+    t.integer "partner_id"
+    t.integer "year"
+    t.string  "manufacturer"
+    t.string  "model"
   end
 
 end

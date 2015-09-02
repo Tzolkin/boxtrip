@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   unless Rails.env.development?
     rescue_from ActiveRecord::RecordNotFound do
-      redirect_to request.referer || root_path, alert: 'Este registro no existe o no se puede acceder a el en este momento'
+      redirect_to request.referer || root_path, alert: I18n.t('activerecord.not_found')
     end
   end
 
@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
         customer_path(current_customer.id)
       end
     elsif resource.class == Partner
-      partner_path
+      partner_path(current_partner.id)
     end
   end
 

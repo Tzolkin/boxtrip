@@ -1,9 +1,11 @@
-class Customer
+class Partner
   class RegistrationsController < Devise::RegistrationsController
+    # layout 'partner'
+
     private
 
-    def user_params
-      params.require(:user).permit(
+    def partner_params
+      params.require(:partner).permit(
         :name,
         :paternal_name,
         :maternal_name,
@@ -11,7 +13,12 @@ class Customer
         :password,
         :password_confirmation,
         :lada,
-        :number
+        :number,
+        :birthdate,
+        :bank_account,
+        :smartphone,
+        :good_health,
+        :hear_about_us
       )
     end
   end

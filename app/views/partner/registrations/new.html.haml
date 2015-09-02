@@ -1,0 +1,190 @@
+.codrops-top.clearfix
+  %span.right
+    %a#back.menu-right.three
+      %span Regresar
+%header.bg-header.partner
+%section.contenido
+  .container
+    .col-md-10.col-md-offset-1.col-form-registry.join-provider
+      .row.center
+        %h1 Unirse a Boxtrip
+        %p.p-info ¡Gana dinero extra y elige cuándo trabajar!
+        .col-xs-10.col-xs-offset-1
+          %p.p-gray Si eres una persona amable, responsable, trabajadora, honesta, fuerte y tienes una camioneta pickup, van o camión de caja
+        .col-xs-12
+          %p
+            %strong ¡TE ESTAMOS BUSCANDO!
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+        .row
+          .col-sm-12
+            %h4 Datos personales:
+          .col-sm-4
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-user.fa-fw
+              = f.input :name, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Nombre (s)' }
+          .col-sm-4
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-user.fa-fw
+              = f.input :paternal_name, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Apellido paterno' }
+          .col-sm-4
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-user.fa-fw
+              = f.input :maternal_name, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Apellido materno' }
+        .row
+          .col-sm-6.col-md-6
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-envelope.fa-fw
+              = f.input :email, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'correo@dominio.com' }
+          .col-sm-6
+            .col-xs-12.col-sm-4
+              %p.lb-registry.phone.center Teléfono móvil
+            .col-xs-4.col-sm-3
+              .input-group-registry
+                = f.input :lada, required: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: '+52', maxlength: 3, value: '+52' }
+            .col-xs-8.col-sm-5.no-padding
+              .input-group-registry
+                = f.input :number, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: '5555555555', maxlength: 10 }
+        .row
+          .col-md-6
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-lock.fa-fw
+              = f.input :password, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Contraseña' }
+          .col-md-6
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-lock.fa-fw
+              = f.input :password_confirmation, required: true, autofocus: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Confirmar contraseña'  }
+        .row
+          .col-sm-6
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-calendar.fa-fw
+              %input#birthdate.form-control.price{ name: 'partner[birthdate]', type: 'text', placeholder: 'Fecha de nacimiento' }
+              -# = f.input :birthdate, label: false, input_html: { class: 'form-control price', placeholder: 'Fecha de nacimiento'  }
+              :javascript
+                $(function () {
+                  $('#birthdate').datetimepicker({
+                    format: 'LL',
+                    viewMode: 'years'
+                  });
+                });
+        - resource.build_partner_address if resource.partner_address.blank?
+        = f.simple_fields_for :partner_address do |a|
+          .row
+            .col-sm-12
+              %h4 Dirección:
+            .col-sm-6
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-home.fa-fw
+                = a.input :street, required: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Calle y número exterior' }
+            .col-sm-2
+              .input-group-registry
+                = a.input :internal_number, required: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'No. Int' }
+            .col-sm-4
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-home.fa-fw
+                = a.input :suburb, required: true, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Colonia' }
+          .row
+            .col-sm-4
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-map.fa-fw
+                = a.input :state, label: false, collection: country_states, include_blank: false, input_html: { class: 'form-control' }
+            .col-sm-4
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-map-marker.fa-fw
+                = a.input :municipality, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Delegación o municipio' }
+            .col-sm-4
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-map-marker.fa-fw
+                = a.input :postal_code, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Código postal' }
+        %hr
+        .row.row-vehicle.input-group-registry
+          .col-sm-10
+            %p.sm-text ¿Cuentas con una camioneta tipo Pickup, Van o Camión con caja?
+          .col-sm-2.center
+            .radio.radio-info.radio-inline
+              %input#vehicle_yes{ name: 'partner[has_vehicle]', type: 'radio', value: '1', onclick: '$("#form-vehicle").show();' }
+              %label.sm-text{ for: 'vehicle_yes' } Si
+            .radio.radio-danger.radio-inline
+              %input#vehicle_no{ name: 'partner[has_vehicle]', type: 'radio', value: '0', onclick: '$("#form-vehicle").hide();' }
+              %label.sm-text{for: "vehicle_no"} No
+        .row#form-vehicle{ style: 'display: none;' }
+          .col-sm-12
+            %h4 Características del vehículo:
+          - resource.build_vehicle if resource.vehicle.blank?
+          = f.simple_fields_for :vehicle do |v|
+            .col-sm-3
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-truck.fa-fw
+                = v.input :year, as: :string, label: false, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Año' }
+            .col-sm-5
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-truck.fa-fw
+                = v.input :manufacturer, label: false, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Fabricante (Ejemplo: Chevrolet)' }
+            .col-sm-4
+              .input-group.input-group-registry
+                %span.input-group-addon.input-group-addon-registry
+                  %i.fa.fa-truck.fa-fw
+                = v.input :model, label: false, label: false, input_html: { class: 'form-control', 'aria-describedby' => 'sizing-addon2', placeholder: 'Modelo' }
+        %hr
+        .row.input-group-registry
+          .col-sm-10
+            %p.sm-text ¿Tienes cuenta bancaria donde puedas recibir pagos por transferencia bancaria?
+          .col-sm-2.center
+            .radio.radio-info.radio-inline
+              %input#bank_account_yes{ name: 'partner[bank_account]', type: 'radio', value: '1' }
+              %label.sm-text{ for: 'bank_account_yes' } Si
+            .radio.radio-danger.radio-inline
+              %input#bank_account_no{ name: 'partner[bank_account]', type: 'radio', value: '0' }
+              %label.sm-text{for: 'bank_account_no' } No
+        .row.input-group-registry
+          .col-sm-10
+            %p.sm-text
+              = '¿Cuentas con un teléfono inteligente Andriod con GPS que soporte la aplicación de Boxtrip?'
+              = link_to 'Descarga aquí', 'http://randomwalker.com.mx', target: '_blank', class: 'p-info'
+          .col-sm-2.center
+            .radio.radio-info.radio-inline
+              %input#smartphone_yes{ name: 'partner[smartphone]', type: 'radio', value: '1' }
+              %label.sm-text{ for: 'bank_account_yes' } Si
+            .radio.radio-danger.radio-inline
+              %input#smartphone_no{ name: 'partner[smartphone]', type: 'radio', value: '0' }
+              %label.sm-text{for: 'bank_account_no' } No
+        .row.input-group-registry
+          .col-sm-10
+            %p.sm-text ¿Estas en condición avalada por un médico, de cargar más de 30 kg sobre tu cabeza?
+          .col-sm-2.center
+            .radio.radio-info.radio-inline
+              %input#good_health_yes{ name: 'partner[good_health]', type: 'radio', value: '1' }
+              %label.sm-text{ for: 'good_health_yes' } Si
+            .radio.radio-danger.radio-inline
+              %input#good_health_no{ name: 'partner[good_health]', type: 'radio', value: '0' }
+              %label.sm-text{for: 'good_health_no' } No
+        .row.input-group-registry
+          .col-sm-4
+            %p.sm-text ¿Cómo supiste sobre Boxtrip?
+          .col-sm-4
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-envelope.fa-fw
+              = f.input :hear_about_us, label: false, collection: social_medias, include_blank: false, input_html: { class: 'form-control' }
+          .col-sm-4
+            .input-group-registry
+              %input#hear_about_us_other{ name: 'hear_about_us_other', class: 'form-control', placeholder: 'Otro', style: 'display: none;' }
+        .row
+          .col-md-4.col-md-offset-4.btn-group-registry
+            %input.btn.btn.btn-info.btn-mudanza.md-text{ type: 'submit', value: 'Enviar' }
+        %hr
+        = render 'partner/shared/links'

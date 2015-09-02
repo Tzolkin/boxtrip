@@ -26,7 +26,7 @@ $(function () {
   $('.btn-stands').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'registry_partner.html'
+      window.top.location.href = 'partner/sign_up'
     }, 1000);
   });
 
@@ -47,7 +47,7 @@ $(function () {
   $('.menu-right.two').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'registry_partner.html'
+      window.top.location.href = 'partner/sign_up'
     }, 1000);
   });
 
@@ -61,7 +61,7 @@ $(function () {
   $('.btn-login-partner').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'login_partner.html'
+      window.top.location.href = 'partner/sign_in'
     }, 1000);
   });
   $('.btn-login-user').click(function () {

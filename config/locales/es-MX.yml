@@ -4,12 +4,14 @@ es-MX:
   unauthorized: 'Necesitas iniciar sesión o registrarte antes de continuar.'
 
   customer: 'Cliente'
+  partner: 'Socio'
   activerecord:
     attributes:
       customer:
         confirmation_token: 'Token de confirmación'
 
     errors:
+      not_found: 'Este registro no existe o no se puede acceder a el en este momento'
       models:
         customer:
           attributes:
