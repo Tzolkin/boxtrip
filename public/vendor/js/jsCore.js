@@ -2,9 +2,7 @@
 /// <reference path="jquery.nicescroll.js" />
 /// <reference path="bootstrap.min.js" />
 
-
 $(document).ready(function () {
-
   'use strict';
 
   if ($(window).width() <= 600) {
@@ -15,7 +13,6 @@ $(document).ready(function () {
   }
 
   $('body').niceScroll();
-
 });
 //Loadlogo
 $(function () {
@@ -132,7 +129,7 @@ $(function () {
 
 //Tooltips
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
 })
 
 //Animates scroll
@@ -150,7 +147,7 @@ $(function () {
   $('.btn-cotizar').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'services'
+      window.top.location.href = ''
     }, 1000);
   });
 
@@ -321,7 +318,7 @@ $(function () {
   $('.btn-enterado').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = '/'
+      window.top.location.href = 'index.html'
     }, 1000);
   });
 

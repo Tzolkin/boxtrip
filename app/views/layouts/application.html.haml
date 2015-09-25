@@ -1,34 +1,35 @@
 !!!
-%html
+%html{ lang: "en" }
   %head
-  %meta{ charset: "utf-8" }
-  %meta{ content: "IE=edge", "http-equiv" => "X-UA-Compatible" }
-  %meta{ content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", name: "viewport" }
-  %title Boxtrip
-  %meta{ content: "Boxtrip. El servicio fácil de mudanzas.", name: "description" }
-  %meta{ content: "moving, moving fast, easy moving", name: "keywords" }
-  %meta{ content: "RandomWalker", name: "author" }
-  %link{ href: "/vendor/img/favicon.png", rel: "icon", sizes: "16x16", type: "image/png" }
-  -# Estilos
-  %link{ href: "/vendor/css/fixed.css", rel: "stylesheet" }
-  %link{ href: "/vendor/css/bootstrap.min.css", rel: "stylesheet" }
-  %link{ href: "/vendor/css/font-awesome.min.css", rel: "stylesheet" }
-  %link{ href: "/vendor/css/main.css", rel: "stylesheet" }
+    %meta{ charset: "utf-8" }
+    %meta{ content: "IE=edge", "http-equiv" => "X-UA-Compatible" }
+    %meta{ content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", name: "viewport" }
+    %title Boxtrip
+    %meta{ content: "Boxtrip. El servicio fácil de mudanzas.", name: "description" }
+    %meta{ content: "moving, moving fast, easy moving", name: "keywords" }
+    %meta{ content: "RandomWalker", name: "author" }
+    %link{ href: "/vendor/img/favicon.png", rel: "icon", sizes: "16x16", type: "image/png" }
+    -# Estilos
+    %link{ href: "/vendor/css/fixed.css", rel: "stylesheet" }
+    %link{ href: "/vendor/css/bootstrap.min.css", rel: "stylesheet" }
+    -# %link{ href: "/vendor/css/font-awesome.min.css", rel: "stylesheet" }
+    %link{ href: "/vendor/css/main.css", rel: "stylesheet" }
 
-  %script{ src: "/vendor/js/jquery-1.11.1.min.js"}
-  %script{ src: "/vendor/js/bootstrap.min.js"}
-  %script{ src: "/vendor/js/jquery.easing.1.3.min.js"}
-  %script{ src: "/vendor/js/jquery.nicescroll.js"}
-  %script{ src: "/vendor/js/animatescroll.js"}
-  %script{ src: "/vendor/js/loadgo.min.js"}
-  %script{ src: "/vendor/js/jsCore.js"}
+    -# Javascript
+    %script{ src: "/vendor/js/jquery-1.11.1.min.js" }
+    -# %script{ src: "/vendor/js/bootstrap.min.js" }
+    -# %script{ src: "/vendor/js/jquery.easing.1.3.min.js" }
+    -# %script{ src: "/vendor/js/jquery.nicescroll.js" }
+    -# %script{ src: "/vendor/js/animatescroll.js" }
+    -# %script{ src: "/vendor/js/loadgo.min.js" }
+    %script{ src: "/vendor/js/jsCore.js" }
 
-  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
 
-  /[if IE]
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    /[if IE]
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 
   %body
     = render partial: "partials/flash"
