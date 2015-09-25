@@ -1,224 +1,272 @@
-= content_for :javascript_includes do
-  = javascript_include_tag('/vendor/js/classie.js')
-  = javascript_include_tag('/vendor/js/landing.js')
+%main#cd-main-content
+  %section#cd-intro
+    %h1 Full Page Intro & Navigation
+    %header.cd-header
+      .title
+        %h1
+          %img{src: "/vendor/img/logoBoxtrip_White.png"}/
+          Boxtrip
+        %p.subline ¡Tu mejor opción para trasladar lo que quieras!
+        %p
+        .col-sm-4.col-sm-offset-4
+          %button.btn.btn-block.btn-info.btn-cotizar
+            Cotiza tu traslado
+      #conocenos.arrow.animated.bounce{"data-placement" => "top", "data-toggle" => "tooltip", title: "¿Quiénes somos?"}
+        %i.fa.fa-chevron-down
+    .cd-blurred-bg
 
-= render partial: 'landing/modals/sign_in'
-= render partial: 'landing/modals/sign_up'
-= render partial: 'landing/modals/quotation'
-= render partial: 'landing/modals/quotation_type'
-
-#container.container-bg.intro-effect-jam3
-  / Top Navigation
-  .codrops-top.clearfix
-    %a.logo
-      %span
-    %span.right
-      %a.menu-right{"data-target" => "#sign_in", "data-toggle" => "modal", href: ""}
-        %span Iniciar sesión
-    %span.right
-      %a.menu-right.two
-        %span Únete a nuestro equipo
-  %header.header
-    .bg-img
-      %img{alt: "Background Image", src: "/vendor/img/bg-intro.jpg"}/
-    .title
-      %h1
-        %img{src: "/vendor/img/logoBoxtrip_White.png"}/
-        Boxtrip
-      %p.subline ¡Tu mejor opción para trasladar lo que quieras!
-      %br/
-      %p
-        El mejor servicio, de manera
-        %strong.p-info fácil
-        y
-        %strong.p-info rápida
-      %p
-      .col-sm-4.col-sm-offset-4
-        %button.btn.btn-block.btn-info.btn-cotizar{"data-target" => "#sign_up", "data-toggle" => "modal"} Cotiza tu traslado
-  %button.trigger{"data-info" => "¡Conocénos!"}
-    %span Trigger
-  .container-fluid.content.no-padding
-    .row.center
-      .col-sm-6.no-padding
-        .wrapper-img
-          %img{src: "/vendor/img/about.jpg"}/
-      .col-sm-6.no-padding
-        .div-title
-          %h1
-            ASÍ
-            %strong FUNCIONA
-        .div-description
-          %p Con estos sencillos pasos tu contratas un servicio para trasladar lo que necesitas.
-          %br/
-    .row.row-steps.center
-      .col-md-10.col-md-offset-1
-        .col-sm-4
-          %h3.box-title Paso 1
-          .wrapper-step
-            %img{src: "/vendor/img/step1.png"}/
-            %h4.p-info
-              %strong Llena un BTrip
-            %p Cuéntanos qué, cuándo y dónde necesitas trasladarlo. Obtén tu cotización al instante.
-        .col-sm-4
-          %h3.box-title Paso 2
-          .wrapper-step
-            %img{src: "/vendor/img/step2.png"}/
-            %h4.p-info
-              %strong Reserva tu Btrip
-            %p Confirma tu reservación y recibe la información sobre el proveedor Boxtrip que llevará a cabo el servicio.
-        .col-sm-4
-          %h3.box-title Paso 3
-          .wrapper-step
-            %img{src: "/vendor/img/step3.png"}/
-            %h4.p-info
-              %strong Rastrea tu Btrip
-            %p Manténte en comunicación con el proveedor Boxtrip, sigue el progreso del traslado, pago y califica.
-    .row.center
-      .container
-        .col-sm-12.no-padding.div-title-carousel
-          %h1
-            USA
-            %strong BOXTRIP
-            PARA:
-    .row
-      #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
-        / Wrapper for slides
-        .carousel-inner{role: "listbox"}
-          .item.active
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-1.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Fletes
-                  %p
-                    ¿Acabas de comprar un mueble? No importa dónde encontraste ese mueble
-                    perfecto para tu casa: en una tienda de muebles, en casa de un amigo, lo compraste en línea,
-                    o en el supermercado, ¡Llévatelo a casa con Boxtrip!
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-2.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Mudanzas Residenciales
-                  %p
-                    Mudarse de casa o departamento es siempre una tarea estresante.
-                    Boxtrip cuenta con proveedores profesionales que harán todo mucho más fácil y agradable.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-6.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Mudanzas de Oficina
-                  %p
-                    Si te estás mudando de oficina Boxtrip puede ayudarte a hacerlo de
-                    forma rápida y segura, para que puedas ocuparte de tu negocio.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-2.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Lleva tus compras a casa
-                  %p
-                    Si acabas de comprar ese mueble que tanto necesitabas, ya no tienes
-                    que esperar semanas a que lo entreguen en tu casa, usa Boxtrip para llevarlo contigo lo antes
-                    posible.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-3.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Contratar ayudantes
-                  %p
-                    ¿Necesitas ayuda para empacar, cambiar los muebles de lugar, mover
-                    algo pesado a otro piso o cargar tus cosas en un camión propio? Los amigos Boxtrip pueden
-                    darte una mano y hacer que todo sea más fácil.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-4.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Donaciones a la caridad
-                  %p
-                    Si tienes cosas que ya no uses y estás pensando en tirarlas a la
-                    basura, mejor dáselo a personas que lo necesiten. ¿No tienes el tiempo, te queda muy lejos
-                    o no tienes cómo llevar las cosas? Boxtrip te ayuda.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-5.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Realizar entregas
-                  %p
-                    Si vendes muebles o algún tipo de objeto que quepa en una camioneta, incluye el envío usando Boxtrip.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-2.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Cambia tu cama
-                  %p
-                    ¿Tu cama viejita ya está en las últimas? Ve hoy por tu cómoda cama nueva y
-                    duerme cómodamente, Boxtrip te ayuda a llevarla a casa.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-2.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Renueva tu cocina
-                  %p
-                    Si tu cocina necesita un cambio, una mesita nueva o un nuevo mueble
-                    para acomodar la despensa, Boxtrip lleva fácilmente todo lo que necesitas.
-          .item
-            .container
-              .row
-                .col-sm-4
-                  %img{src: "/vendor/img/carousel-2.jpg"}/
-                .col-sm-8.col-crs-pad
-                  %h2
-                    %strong Equipo de ejercicio
-                  %p
-                    ¿Estás preparando tu cuerpo de acero para ese evento especial? Si
-                    ya encontraste el equipo perfecto para ponerte en forma, Boxtrip lo lleva a la comodidad de
-                    tu hogar.
-        / Controls
-        %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic", role: "button"}
-          %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
-          %span.sr-only Previous
-        %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic", role: "button"}
-          %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "true"}
-          %span.sr-only Next
-    .row
-      .col-md-12.col-buttons
+.cd-shadow-layer
+.container.content
+  %section.pasos
+    .container
+      .row.row-title
+        %label Así funciona Boxtrip
+        %p
+          %strong.p-info Boxtrip
+          es una plataforma que busca por tí, la mejor opción para tu servicio de mudanza
+      .row
+        .col-md-4.col-panel
+          %hr
+          %p
+            Con estos
+            %strong.p-info sencillos pasos
+            tu contratas un servicio para trasladar lo que necesitas.
+          %hr
+          / begin panel group
+          #accordion.panel-group{"aria-multiselectable" => "true", role: "tablist"}
+            / panel 1
+            .panel.panel-default
+              / wrap panel heading in span to trigger image change as well as collapse
+              .side-tab{"aria-expanded" => "false", "data-target" => "#tab1", "data-toggle" => "tab", role: "tab"}
+                #headingOne.panel-heading{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseOne", role: "tab"}
+                  %h4.panel-title 1. Déjanos ayudarte
+              #collapseOne.panel-collapse.collapse.in{"aria-labelledby" => "headingOne", role: "tabpanel"}
+                .panel-body
+                  / Tab content goes here
+                  Ingresando tus datos te ayudaremos a realizar ese
+                  %strong.p-info tedioso
+                  trabajo de buscar un servicio de mudanza. ¡Tu tranquilo, nosostros nos encargamos de eso!
+            / / panel 1
+            / panel 2
+            .panel.panel-default
+              / wrap panel heading in span to trigger image change as well as collapse
+              .side-tab{"aria-expanded" => "false", "data-target" => "#tab2", "data-toggle" => "tab", role: "tab"}
+                #headingTwo.panel-heading{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseTwo", role: "tab"}
+                  %h4.panel-title.collapsed 2. ¿Que necesitas trasladar?
+              #collapseTwo.panel-collapse.collapse{"aria-labelledby" => "headingTwo", role: "tabpanel"}
+                .panel-body
+                  / Tab content goes here
+                  En cuestión de minutos recibirás nuestra llamada para que nos cuentes que deseas trasladar y proporcionarte los detalles de tu cotización.
+                  %strong.p-info Sencillo
+                  ¿no crees?
+            / / panel 2
+            / panel 3
+            .panel.panel-default
+              / wrap panel heading in span to trigger image change as well as collapse
+              .side-tab{"aria-expanded" => "false", "data-target" => "#tab3", "data-toggle" => "tab", role: "tab"}
+                #headingThree.panel-heading{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", href: "#collapseThree", role: "tab"}
+                  %h4.panel-title 3. Confirma tu reservación
+              #collapseThree.panel-collapse.collapse{"aria-labelledby" => "headingThree", role: "tabpanel"}
+                .panel-body
+                  / tab content goes here
+                  Una vez que sabemos que quieres trasladar, te buscamos la mejor opción para tu servicio y así puedas confirmar tu reservación.
+                  %strong.p-info ¡Ves que sencillo es con Boxtrip!
+                  Sin salir de tu hogar ya tienes un servicio de mudanza en la puerta de tu casa, ahora solo ¡disfruta tu viaje sin preocupaciones!
+          / / panel-group
+        / /col-md-4
+        .col-md-8.col-macbook
+          / begin macbook pro mockup
+          .md-macbook-pro.md-glare
+            .md-lid
+              .md-camera
+              .md-screen
+                / content goes here
+                .tab-featured-image
+                  .tab-content
+                    #tab1.tab-pane.in.active
+                      %img.img.img-responsive{alt: "tab1", src: "/vendor/img/step1.jpg"}/
+                    #tab2.tab-pane
+                      %img.img.img-responsive{src: "/vendor/img/step2.jpg"}/
+                    #tab3.tab-pane.fade
+                      %img.img.img-responsive{alt: "tab1", src: "/vendor/img/step3.jpg"}/
+            .md-base
+          / end macbook pro mockup
+        / / .col-md-8
+      / / .row
+  %section.uso
+    .container
+      .row.center
+        .row.row-title
+          %label Usa Boxtrip para:
+      .row
+        #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+          / Wrapper for slides
+          .carousel-inner{role: "listbox"}
+            .item.active
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-1.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Fletes
+                    %hr/
+                    %p
+                      ¿Acabas de comprar un mueble? No importa dónde encontraste ese mueble
+                      perfecto para tu casa: en una tienda de muebles, en casa de un amigo, lo compraste en línea,
+                      o en el supermercado, ¡Llévatelo a casa con Boxtrip!
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-2.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Mudanzas Residenciales
+                    %hr/
+                    %p
+                      Mudarse de casa o departamento es siempre una tarea estresante.
+                      Boxtrip cuenta con proveedores profesionales que harán todo mucho más fácil y agradable.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-6.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Mudanzas de Oficina
+                    %hr/
+                    %p
+                      Si te estás mudando de oficina Boxtrip puede ayudarte a hacerlo de
+                      forma rápida y segura, para que puedas ocuparte de tu negocio.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-2.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Lleva tus compras a casa
+                    %hr/
+                    %p
+                      Si acabas de comprar ese mueble que tanto necesitabas, ya no tienes
+                      que esperar semanas a que lo entreguen en tu casa, usa Boxtrip para llevarlo contigo lo antes
+                      posible.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-3.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Contratar ayudantes
+                    %hr/
+                    %p
+                      ¿Necesitas ayuda para empacar, cambiar los muebles de lugar, mover
+                      algo pesado a otro piso o cargar tus cosas en un camión propio? Los amigos Boxtrip pueden
+                      darte una mano y hacer que todo sea más fácil.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-4.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Donaciones a la caridad
+                    %hr/
+                    %p
+                      Si tienes cosas que ya no uses y estás pensando en tirarlas a la
+                      basura, mejor dáselo a personas que lo necesiten. ¿No tienes el tiempo, te queda muy lejos
+                      o no tienes cómo llevar las cosas? Boxtrip te ayuda.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-5.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Realizar entregas
+                    %hr/
+                    %p
+                      Si vendes muebles o algún tipo de objeto que quepa en una camioneta, incluye el envío usando Boxtrip.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-2.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Cambia tu cama
+                    %hr/
+                    %p
+                      ¿Tu cama viejita ya está en las últimas? Ve hoy por tu cómoda cama nueva y
+                      duerme cómodamente, Boxtrip te ayuda a llevarla a casa.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-2.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Renueva tu cocina
+                    %hr/
+                    %p
+                      Si tu cocina necesita un cambio, una mesita nueva o un nuevo mueble
+                      para acomodar la despensa, Boxtrip lleva fácilmente todo lo que necesitas.
+            .item
+              .container
+                .row
+                  .col-sm-4
+                    %img{src: "/vendor/img/carousel-2.jpg"}/
+                  .col-sm-8.col-crs-pad
+                    %h2
+                      %strong Equipo de ejercicio
+                    %hr/
+                    %p
+                      ¿Estás preparando tu cuerpo de acero para ese evento especial? Si
+                      ya encontraste el equipo perfecto para ponerte en forma, Boxtrip lo lleva a la comodidad de
+                      tu hogar.
+          / Controls
+          %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic", role: "button"}
+            %span.glyphicon.glyphicon-chevron-left{"aria-hidden" => "true"}
+            %span.sr-only Previous
+          %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic", role: "button"}
+            %span.glyphicon.glyphicon-chevron-right{"aria-hidden" => "true"}
+            %span.sr-only Next
+      .row.col-buttons
         .col-md-12
           %h2.center
             Es
             %strong fácil, rápido, accesible y eficaz.
           %br/
         .col-xs-12.col-sm-4.col-sm-offset-2
-          %button.btn.btn-mudanza.btn-type-mud.btn-residencial.btn-index.btn-cotizar{"data-target" => "#sign_up", "data-toggle" => "modal"}
+          %button.btn.btn-mudanza.btn-type-mud.btn-residencial.btn-index.btn-cotizar
             Cotizar
             %strong Traslado
         .col-xs-12.col-sm-4
           %button.btn.btn-mudanza.btn-type-mud.btn-stands.ex-text.btn-index
             %strong Únete a nuestro equipo
-  = render 'landing/partials/footer'
+  %section.funciona
+    .container
+      .row.row-title
+        %label Menciones
+        %p
+          %strong.p-info Boxtrip
+          ha sido mencionado en diferentes medios de comunicación, te invitamos a que le eches un vistazo.
+      .row.center.logos
+        .col-sm-3
+          %img#excelsior{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/excelsior.png", title: "Ver nota en Excelsior"}/
+        .col-sm-3
+          %img#financiero{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/financiero.png", title: "Ver nota en el Financiero"}/
+        .col-sm-3
+          %img#angelhack{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/angelhack2.png", title: "Ver nota en Angelhack"}/
+        .col-sm-3
+          %img#mastercard{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/mastercard.png", title: "Ver nota en Mastercard"}/
+      .row.center
+        .col-sm-6.col-sm-offset-3
+          .embed-responsive.embed-responsive-16by9
+            %iframe.embed-responsive-item{allowfullscreen: "", frameborder: "0", src: "https://www.youtube.com/embed/28LUVpbhJCo"}
+      #pasos.arrow.animated.bounce{"data-placement" => "top", "data-toggle" => "tooltip", title: "¿Deseas cotizar tu traslado ahora?"}
+        %i.fa.fa-chevron-up
 
-/ /container
+= render 'landing/partials/footer'
