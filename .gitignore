@@ -1,6 +1,5 @@
 .keep
 
-Gemfile.lock
 *.DS_Store
 
 # Ignore bundler config.
