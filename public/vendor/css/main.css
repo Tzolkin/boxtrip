@@ -198,6 +198,7 @@ a:hover, a:focus {
 	font-size: 0.8em;
     font-weight:800;
 	position: relative;
+    background:#f8f8f8;
 }
 
 .demo-5 .related {
@@ -294,7 +295,7 @@ html, body, .container-bg, .header {
     background:rgba(0,0,0,0.6);
 	font-weight: 800;
 	font-size: 3.25em;
-	margin: 0 auto;
+	margin: 0px auto;
     border-radius:0.5em;
         -moz-transition: all ease 0.5s;
     -o-transition: all ease 0.5s;
@@ -304,10 +305,10 @@ html, body, .container-bg, .header {
 
 .title p {
 	color: #fff;
-	padding: 0 0 0.6em;
 	font-weight: 300;
-	font-size: 0.85em;
-	margin: 0 auto;
+	font-size: 1.2em;
+	margin: 20px auto 0;
+      text-shadow:1px 2px 2px #565656;
 }
 
 .title h1,
@@ -549,14 +550,14 @@ button.trigger span::before {
 }
 
 .col-buttons {
-    padding:5em 0;
+    padding:3em 0 ;
 }
 
 /* Conent */
-.content {
+/*.content {
 	margin: 0 auto;
-	padding: 0 0 3em;
-}
+	padding-bottom:3em;
+}*/
 
 .row-registry {
     padding:1em 1.6em;
@@ -577,7 +578,7 @@ button.trigger span::before {
 }
 
 .wrapper-step {
-    padding:0 2.5em 0.5em;
+    padding:0 1.5em 0.5em;
     border-bottom:5px solid #5bc0de;  
 }
     .wrapper-step img {
@@ -830,6 +831,7 @@ button.trigger span::before {
     color:#fff;
     height:201px;
     overflow:hidden;
+    position:relative;
 }
 .div-title-carousel {
     padding:0.7em;
@@ -851,7 +853,7 @@ button.trigger span::before {
     color:#5bc0de;
 }
 .carousel .col-crs-pad {
-        padding:1.5em 0.5em;
+        padding:1.8em;
     }
 
 @media (max-width:468px) {
@@ -880,7 +882,7 @@ button.trigger span::before {
     font-size: 1em;
     }
     .carousel .col-crs-pad {
-        padding:0 15px;
+        padding:15px;
     }
 }
 /*------REGISTRY------*/
@@ -1305,7 +1307,9 @@ td.obj-center {
 	}
 
 	.title, .content {
-		font-size: 50%;
+		font-size: 60%;
+        padding-left:16px;
+        padding-right:16px;
 	}
 
 	button.trigger::before {
@@ -1324,7 +1328,7 @@ td.obj-center {
           font-size: 0.5em;
     }
     .title {
-        top:25%;
+        top:45%;
     }
 
     .title h1 {
@@ -2245,3 +2249,470 @@ body.drag-hover {
         background:#5bc0de;
         padding:0 0.4em;
     }
+
+/*----Alerts Paneles------*/
+.alert-panel {
+    margin-bottom:0;
+    width:70%;
+    margin-left:15%;
+    text-align:center;
+    position:fixed;
+    top:0;
+    z-index:10001;
+}
+
+@media ( max-width:468px) {
+    .alert-panel {
+    margin-bottom:0;
+    width:100%;
+    margin-left:0%;
+    z-index:10001;
+    font-size:0.7em;
+}
+
+}
+
+/*-----Modal Landing Boxtrip----*/
+.col-boxtrip {
+    padding:1em 1.5em;
+    background:#fff;
+    border:5px dashed #d1ebfa;
+    color:#4e4e4e;
+    font-size:0.8em;
+}
+.col-boxtrip-footer {
+    background:#d1ebfa;
+    color:#325983;
+    font-size:0.8em;
+}
+.navbar-brand.boxtrip {
+    max-width:110px;
+    padding:0;
+}
+    .navbar-brand.boxtrip img {
+        max-width:100%;
+    }
+.navbar-text.boxtrip {
+    margin-left:5px;
+    margin-right:5px;
+    display:block;
+}
+.navbar-text.logo {
+    margin:20px 5px 10px;
+}
+.navbar-text.boxtrip a {
+    padding:0;
+}
+.navbar-text.boxtrip a i {
+    font-size:1.8em;
+}
+
+.modal-boxtrip {
+    padding:0 15px;
+}
+.alert-boxtrip {
+    font-size:0.7em;
+    /*Aqui oculto los alerts*/
+    display:none;
+}
+
+@media(max-width:480px) {
+    .navbar-brand.boxtrip {
+    max-width:49%;
+    padding:15px;
+}
+    .navbar-text.boxtrip {
+        max-width:45%;
+        display:inline-block;
+    }
+}
+
+
+/*------Fixed Styles Index-----*/
+#cd-main-content {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background-color: #3a393f;
+  /* slightly visible only when we resize this element */
+  z-index: 1;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.no-js #cd-main-content {
+  height: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.cd-blurred-bg {
+  /* we use jQuery to apply a mask to this element - CSS clip property */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/bg-intro.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+.no-js .cd-blurred-bg {
+  display: none;
+}
+
+.row-title {
+    text-align:center;
+    padding:1.5em 0 0.5em;
+    font-size:1.5em;
+}
+    .row-title label {
+        border-bottom:5px solid #5bc0de;
+    }
+    .row-title p {
+        font-size:0.7em;
+    }
+
+    /*  EFECTO BOUNCING  ARROW*/
+
+.arrow {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    margin-left: -20px;
+    z-index: 9999;
+    cursor: pointer;
+    padding: 0.5em;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+    border-radius:5%;
+}
+    .arrow:hover {
+        background:#5bc0de;
+    }
+
+        .arrow i {
+            color:#fff;
+            font-size:2.5em;
+        }
+
+.bounce {
+	-webkit-animation-name: bounce;
+	-moz-animation-name: bounce;
+	-o-animation-name: bounce;
+	animation-name: bounce;
+}
+.animated{-webkit-animation-fill-mode:both;
+-moz-animation-fill-mode:both;
+-ms-animation-fill-mode:both;
+-o-animation-fill-mode:both;
+
+            animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+
+animation-fill-mode:both;
+-webkit-animation-duration:2s;
+-moz-animation-duration:2s;
+-ms-animation-duration:2s;
+-o-animation-duration:2s;
+animation-duration:2s;
+}
+
+
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}	40% {-webkit-transform: translateY(-30px);}
+	60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-30px);}
+	60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-30px);}
+	60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+/*Sections*/
+.pasos {
+    padding:0;
+}
+.funciona, .pasos {
+    min-height:100vh;
+    height:auto;
+    position:relative;
+}
+    .pasos .arrow {
+        position:absolute;
+        bottom:2%;
+        border-color:#5bc0de;
+    }
+    .funciona .arrow {
+        position:absolute;
+        bottom:-8%;
+        border-color:#5bc0de;
+    }
+        .funciona .arrow i, .pasos .arrow i {
+            color:#5bc0de;
+        }
+        .funciona .arrow:hover i, .pasos .arrow:hover i {
+            color:#fff;
+        }
+
+/*---Pasos----*/
+.panel-heading:hover {
+    cursor:pointer;
+}
+.panel-heading {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+}
+
+.side-tab:hover {
+        cursor: pointer;
+    }
+    .panel.panel-default {
+        border: none;
+        box-shadow: none !important;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        
+    }
+    .panel-heading {
+        border: none;
+       background:#5bc0de;
+    color:#fff;  
+    }
+    .panel-body {
+        background-color: #f5f5f5;
+        font-size:0.8em;
+    }
+    .panel-title {
+        font-weight: 400;
+
+    }
+
+/*----------------------------------
+    Macbook pro mockup from:
+    http://jaredhardy.com/minimal-devices/
+    
+----------------------------------*/
+
+.md-macbook-pro {
+  display: block;
+  width: 55.3125em;
+  height: 31.875em;
+  font-size: 13px;
+  margin: 0 auto;
+}
+.md-macbook-pro .md-lid {
+  width: 45em;
+  height: 30.625em;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 1.875em;
+  border: solid 0.1875em #cdced1;
+  background: #131313;
+}
+.md-macbook-pro .md-camera {
+  width: 0.375em;
+  height: 0.375em;
+  margin: 0 auto;
+  position: relative;
+  top: 1.0625em;
+  background: #000;
+  border-radius: 100%;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+.md-macbook-pro .md-camera:after {
+  content: "";
+  display: block;
+  width: 0.125em;
+  height: 0.125em;
+  position: absolute;
+  left: 0.125em;
+  top: 0.0625em;
+  background: #353542;
+  border-radius: 100%;
+}
+.md-macbook-pro .md-screen {
+  width: 42.25em;
+  height: 26.375em;
+  margin: 0 auto;
+  position: relative;
+  top: 2.0625em;
+  // background: #1d1d1d;
+  background: #fff;
+  overflow: hidden;
+}
+.md-macbook-pro .md-screen img {
+  width: 100%;
+}
+.md-macbook-pro .md-base {
+  width: 100%;
+  height: 0.9375em;
+  position: relative;
+  top: -0.75em;
+  background: #c6c7ca;
+}
+.md-macbook-pro .md-base:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.5em;
+  margin: 0 auto;
+  position: relative;
+  bottom: -0.1875em;
+  background: #b9babe;
+  border-radius: 0 0 1.25em 1.25em;
+}
+.md-macbook-pro .md-base:before {
+  content: "";
+  display: block;
+  width: 7.6875em;
+  height: 0.625em;
+  margin: 0 auto;
+  position: relative;
+  background: #a6a8ad;
+  border-radius: 0 0 0.625em 0.625em;
+}
+.md-macbook-pro.md-glare .md-lid:after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 1.25em 0 0;
+  background: -webkit-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+  background: -moz-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+  background: -o-linear-gradient(37deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+  background: linear-gradient(53deg, rgba(255, 255, 255, 0) 50%, rgba(247, 248, 240, 0.025) 50%, rgba(250, 245, 252, 0.08));
+}
+
+.col-panel p{
+    font-size:0.8em;
+}
+.row.logos {
+    margin-bottom:1.5em;
+}
+    .row.logos img {
+        cursor:pointer;
+    }
+@media (max-width:768px) {
+    .modal-boxtrip p {
+        font-size:0.8em;
+    }
+
+    .col-panel p{
+    font-size:1.2em;
+    }
+
+    .pasos, .funciona, .uso {
+       min-height:initial;
+       height:auto;
+       padding:1.5em 0;
+    }
+    .funciona .arrow, .pasos .arrow, .uso .arrow {
+        display:none;
+    }
+
+    .col-macbook {
+        display:none;
+    }
+    .panel-body {
+        font-size:1em;
+    }
+}
+
+.col-yolo {
+    min-height:100vh;
+    background:url(../img/yolo.jpg) center no-repeat;
+    padding:4em 2em 2em;
+    text-align:center;
+    color:#232323;
+}
+    .col-yolo h1 {
+        font-size:5em;
+    }
+.col-tailored {
+    min-height:100vh;
+    background:url(../img/tailored.jpg) center  no-repeat;
+    padding:4em 2em 2em;
+    text-align:center;
+    color:#fff;
+}
+    .col-tailored h1 {
+        font-size:5em;
+    }
+.btn-service {
+    padding: 6px 14px;
+    font-size: 1.3em;
+    background: #5bc0de;
+    color: #fff;
+    border:2px solid #5bc0de;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+    .btn-service:hover, .btn-service:focus, .btn-service:active {
+        background: #514753;
+        border:2px solid #514753;
+        color: #fff;
+    }
+
+@media (max-width:768px) {
+    .col-yolo {
+    min-height:50vh;
+    font-size:65%;
+}
+.col-tailored {
+    min-height:50vh;
+   font-size:65%;
+}
+}
+
+@media (max-width:468px) {
+    .col-yolo {
+    min-height:50vh;
+    font-size:65%;
+    padding:2em 1em;
+}
+        .col-yolo h1 {
+            font-size:2.3em;
+        }
+.col-tailored {
+    min-height:50vh;
+   font-size:65%;
+   padding:2em 1em;
+}
+    .col-tailored h1 {
+        font-size:2.3em;
+    }
+}
