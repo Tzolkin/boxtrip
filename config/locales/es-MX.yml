@@ -9,6 +9,12 @@ es-MX:
     attributes:
       customer:
         confirmation_token: 'Token de confirmación'
+      customer_info:
+        name: 'Nombre'
+        paternal_name: 'Apellido paterno'
+        maternal_name: 'Apellido materno'
+        email: 'Correo electrónico'
+        phone_number: 'Teléfono'
 
     errors:
       not_found: 'Este registro no existe o no se puede acceder a el en este momento'

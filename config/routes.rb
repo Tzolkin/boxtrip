@@ -16,10 +16,10 @@ Rails.application.routes.draw do
 
   root 'landing#index'
   get 'privacy', to: 'landing#privacy'
-  namespace :btrips, only: :index do
+  namespace :btrips do
     get '/', to: 'services#index'
     get '/thanks', to: 'services#thanks'
-    resources :tailored, only: :new
+    resources :tailoreds, except: [:show, :edit, :destroy, :update]
     resources :yolo, only: :new
   end
 
