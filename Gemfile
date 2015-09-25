@@ -18,6 +18,8 @@ gem 'devise'
 gem 'decent_exposure'
 gem 'haml'
 
+gem 'figaro'
+
 group :development, :test do
   gem 'web-console'
   gem 'spring'

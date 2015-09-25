@@ -3,9 +3,13 @@ module Btrips
     expose(:tailored, attributes: :tailored_params)
 
     def create
-      tailored.save
-
-      redirect_to btrips_thanks_path
+      if tailored.save
+        flash[:success] = t('notification.success_create', value: 'Servicio tailored')
+        redirect_to btrips_thanks_path
+      else
+        flash[:error] = tailored.errors.full_messages
+        redirect_to :back
+      end
     end
 
     private

@@ -28,3 +28,6 @@
 /config/application.yml
 /config/db_restore.yml
 /config/initializers/enable_sql_logs.rb
+
+# Ignore application configuration
+/config/application.yml

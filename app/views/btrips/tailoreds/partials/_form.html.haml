@@ -4,7 +4,7 @@
     .row
       .col-sm-4
         .form-group
-          = f.input :name, input_html: { class: 'form-control' }
+          = f.input :name, required: true, input_html: { class: 'form-control' }
         .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
           %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
             %span{"aria-hidden" => "true"} ×
@@ -46,6 +46,6 @@
   .block-xs
   .row
     .col-sm-4.col-sm-offset-4
-      %button#send2.btn.btn-info.btn-block.btn-lg
-        Reservar
+      %button.btn.btn-info.btn-block.btn-lg{ type: :submit }
         %i.fa.fa-star
+        Reservar
