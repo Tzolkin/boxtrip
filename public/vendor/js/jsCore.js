@@ -147,95 +147,95 @@ $(function () {
   $('.btn-cotizar').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = ''
+      window.top.location.href = '/btrips'
     }, 1000);
   });
 
   $('#yolo').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'price.html'
+      window.top.location.href = '/btrips/yolo/new'
     }, 1000);
   });
   $('#tailored').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'user_data_tailored.html'
+      window.top.location.href = '/btrips/tailored/new'
     }, 1000);
   });
 
   $('.btn-registrar').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'price.html'
+      window.top.location.href = '/'
     }, 1000);
   });
   $('.user-log').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'admin.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-rapida').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'price.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-amplia').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'price_wide.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-stands').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'registry_partner.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-reservar').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'reservation.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-reservar2').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'reservation.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.menu-right.two').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'registry_partner.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('#back').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'index.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-login-partner').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'login_partner.html'
+      window.top.location.href = '/'
     }, 1000);
   });
   $('.btn-login-user').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'login_user.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
@@ -249,38 +249,38 @@ $(function () {
   $('.btn-privacidad').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'aviso_privacidad.html'
+      window.top.location.href = '/privacy'
     }, 1000);
   });
   $('.btn-terminos').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'terminos_condiciones.html'
+      window.top.location.href = '/privacy'
     }, 1000);
   });
   $('.btn-preguntas').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'preguntas.html'
+      window.top.location.href = '/privacy'
     }, 1000);
   });
   $('.btn-admin').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'test.html'
+      window.top.location.href = '/'
     }, 1000);
   });
   $('.btn-proveedor').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'reservation.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
   $('.btn-finish').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'thanks.html'
+      window.top.location.href = '/btrips/thanks'
     }, 1000);
   });
 
@@ -311,14 +311,14 @@ $(function () {
   $('#send2').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'thanks.html'
+      window.top.location.href = '/btrips/thanks'
     }, 1000);
   });
 
   $('.btn-enterado').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = 'index.html'
+      window.top.location.href = '/'
     }, 1000);
   });
 
