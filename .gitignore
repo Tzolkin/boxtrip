@@ -19,11 +19,11 @@
 !public/assets/bg
 !public/assets/icons
 !public/assets/bootstrap
-public/assets/javascript/
 /public/cms/uploads/
 /public/robots.txt
 /public/human.txt
 /public/sitemap*.*
+/public/assets
 
 /config/application.yml
 /config/db_restore.yml
