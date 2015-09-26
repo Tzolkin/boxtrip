@@ -1,0 +1,124 @@
+= content_for :stylesheets_includes do
+  = stylesheet_link_tag('/vendor/css/bootstrap-datetimepicker.min.css')
+  = stylesheet_link_tag('/vendor/css/jquery-ui.min.css')
+  = stylesheet_link_tag('/vendor/css/ladda-themeless.min.css')
+  = stylesheet_link_tag('/vendor/css/prism.css')
+  = stylesheet_link_tag('/vendor/css/build.css')
+
+= content_for :javascript_includes do
+  = javascript_include_tag('/vendor/js/jquery-ui.min.js')
+  = javascript_include_tag('/vendor/js/spin.min.js')
+  = javascript_include_tag('/vendor/js/ladda.js')
+  %script{src: "http://maps.google.com/maps/api/js?sensor=false&libraries=geometry,places", type: "text/javascript"}
+  %script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
+
+
+.codrops-top.clearfix
+  -# %span.right
+    %a.menu-right.user-log
+      %span Volver a mi perfil
+  %span.right
+    %a#back.menu-right.three
+      %span Regresar
+
+%header.bg-header.price
+%section.contenido
+  .container.no-padding
+    .col-md-10.col-md-offset-1.col-form-registry.price
+      .row
+        .col-xs-4.col-sm-1.col-sm-offset-9
+          .progress-step.active
+            %label 1
+            %img{src: "/vendor/img/step1.png"}
+        .col-xs-4.col-sm-1
+          .progress-step
+            %label 2
+            %img{src: "/vendor/img/step2.png"}
+        .col-xs-4.col-sm-1
+          .progress-step
+            %label 3
+            %img{src: "/vendor/img/step3.png"}
+      %h1
+        Servicio
+        %strong YOLO
+      %hr/
+      .row
+        .col-md-7
+          .input-group.input-group-registry
+            %span.input-group-addon.input-group-addon-registry
+              %i.fa.fa-building.fa-fw
+            %input#origin.form-control{"aria-describedby" => "sizing-addon2", placeholder: "Dirección de origen", type: "text"}
+            %span#origin_error
+          .col-md-12.no-padding
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-truck.fa-fw
+              %input#destination.form-control{"aria-describedby" => "sizing-addon2", placeholder: "Dirección de destino", type: "text", onFocus: 'geolocate();' }
+          .col-sm-7
+            %p.lb-registry.price Numero de artículos a trasladar:
+          .col-sm-4
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-heart.fa-fw
+              %input.form-control.price{placeholder: "0", type: "number"}/
+          .col-md-12
+            %p.lb-registry.price Fecha estimada de mudanza:
+          .col-sm-6
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-calendar.fa-fw
+              %input#datetimepicker4.form-control.price{placeholder: "Fecha", type: "text"}/
+              :javascript
+                $(function () {
+                    $('#datetimepicker4').datetimepicker({
+                        format: "LL",
+                        viewMode: 'days'
+                    });
+                });
+            .alert.alert-info.alert-registry{role: "alert"}
+              %strong *Obligatorio
+          .col-sm-6
+            .input-group.input-group-registry
+              %span.input-group-addon.input-group-addon-registry
+                %i.fa.fa-clock-o.fa-fw
+              %input#datetimepicker5.form-control.price{placeholder: "Hora", type: "text"}/
+              :javascript
+                $(function () {
+                    $('#datetimepicker5').datetimepicker({
+                        format: 'LT'
+                    });
+                });
+            .alert.alert-info.alert-registry{role: "alert"}
+              %strong *Obligatorio
+        .col-md-5
+          #map-canvas.map-canvas
+          %p.lb-registry.price
+            %i.fa.fa-map-marker>
+            %strong Ruta estimada por Google Maps
+      .row
+        .col-sm-4.col-sm-offset-4.no-padding
+          %button.btn.btn-block.btn-type-mud.btn-info.btn-tarifa.ladda-button.md-text{"data-style" => "zoom-in"} Estimar tarifa
+      %hr/
+      .row.tarifa-hidden
+        .col-sm-4
+          %h2.pull-right Precio estimado:
+        .col-sm-4.center
+          %h1.p-info
+            %strong $1,500.00*
+      .row.tarifa-hidden
+        %hr/
+        .col-sm-9
+          %p.lb-registry.p-info Una vez que el servicio termine, en la app podrás agregar una propina para el proveedor.
+        .col-sm-3
+          %button.btn.btn-info.btn-block.btn-table.md-text
+            Continuar
+            %i.fa.fa-chevron-right
+      .row.tarifa-hidden
+        .col-md-12
+          %p.lb-registry.p-document.info *El precio estimado puede variar si el inventario reportado no es el real
+
+-# = javascript_include_tag('http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed')
+= javascript_include_tag('/vendor/js/btrips.maps.js')
+= javascript_include_tag('/vendor/js/btrips.yolos.js')
+
+= render '/landing/partials/footer'

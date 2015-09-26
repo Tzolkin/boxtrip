@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   namespace :btrips do
     get '/', to: 'services#index'
     get '/thanks', to: 'services#thanks'
-    resources :tailoreds, except: [:show, :edit, :destroy, :update]
-    resources :yolo, only: :new
+    resources :tailoreds, only: [:index, :create, :new]
+    resources :yolos, only: [:index, :create, :new]
   end
 
   namespace :customer do

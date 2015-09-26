@@ -8,6 +8,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'twitter-bootstrap-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -17,6 +18,11 @@ gem 'simple_form'
 gem 'devise'
 gem 'decent_exposure'
 gem 'haml'
+
+# Maps
+gem 'gmaps4rails'
+# gem 'gmaps-autocomplete-rails'
+gem 'underscore-rails'
 
 gem 'figaro'
 

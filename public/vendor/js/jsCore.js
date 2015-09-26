@@ -154,7 +154,7 @@ $(function () {
   $('#yolo').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = '/btrips/yolo/new'
+      window.top.location.href = '/btrips/yolos/new'
     }, 1000);
   });
   $('#tailored').click(function () {
