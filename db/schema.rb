@@ -156,12 +156,14 @@ ActiveRecord::Schema.define(version: 20150925044717) do
 
   create_table "yolos", force: :cascade do |t|
     t.integer  "customer_info_id"
-    t.string   "source_address"
-    t.float    "source_lan"
-    t.float    "source_lng"
+    t.string   "origin_address"
+    t.float    "origin_lat"
+    t.float    "origin_lng"
     t.string   "destination_address"
-    t.float    "destination_lan"
+    t.float    "destination_lat"
     t.float    "destination_lng"
+    t.decimal  "distance"
+    t.string   "distance_metric"
     t.integer  "items_number"
     t.datetime "estimated_date"
     t.decimal  "quotation"

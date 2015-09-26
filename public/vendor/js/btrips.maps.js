@@ -7,12 +7,16 @@ $(function() {
   btripMap.buildMap({
     internal: {
       id: 'map-canvas'
+    },
+    provider: {
+      zoom:      10,
+      center:    new google.maps.LatLng(19.3907336,-99.1436126)
     }
   },
   function() {
     directionsDisplay.setMap(btripMap.getMap());
-    if(navigator.geolocation)
-      navigator.geolocation.getCurrentPosition(displayOnMap);
+    // if(navigator.geolocation)
+    //   navigator.geolocation.getCurrentPosition(displayOnMap);
   });
 
   function displayOnMap(position){
@@ -27,7 +31,8 @@ $(function() {
     var origin      = new google.maps.LatLng(origin_geometry.location.H, origin_geometry.location.L);
     var destination = new google.maps.LatLng(destination_geometry.location.H, destination_geometry.location.L);
 
-    btripMap.map.replaceMarkers('');
+    // TODO clear Markers
+    btripMap.removeMarkers();
 
     var request = {
       origin:      origin,
@@ -35,7 +40,7 @@ $(function() {
       travelMode:  google.maps.TravelMode.DRIVING
     };
     directionsService.route(request, function(response, status) {
-      console.log(response);
+      $('#yolo_distance').val(response.routes[0].legs[0].distance.value);
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
       }
@@ -47,6 +52,8 @@ $(function() {
     .geocomplete()
     .bind("geocode:result", function(event, result) {
       origin_geometry = result.geometry;
+      $('#yolo_origin_lat').val(origin_geometry.location.H);
+      $('#yolo_origin_lng').val(origin_geometry.location.L);
       validateGeometries();
       // console.log(result);
     });
@@ -54,6 +61,8 @@ $(function() {
     .geocomplete()
     .bind("geocode:result", function(event, result) {
       destination_geometry = result.geometry;
+      $('#yolo_destination_lat').val(destination_geometry.location.H);
+      $('#yolo_destination_lng').val(destination_geometry.location.L);
       validateGeometries();
       // console.log(result);
     });

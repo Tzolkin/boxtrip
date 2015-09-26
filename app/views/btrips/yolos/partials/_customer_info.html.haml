@@ -1,0 +1,63 @@
+= b.simple_fields_for :customer_info do |f|
+  %hr/
+  .row
+    .col-sm-12.col-boxtrip
+      .row.center
+        %h2
+          %strong
+        %h4.p-info
+          %strong Boxtrip
+          te ayuda
+        %p
+          Solo completa los siguientes datos y nosotros nos encargamos de ayudarte con tu mudanza. Para brindarte mayor seguridad de tus datos dale un vistazo a nuestro
+          %strong
+            %a.b-info{"data-target" => "#aviso", "data-toggle" => "modal", href: ""} Aviso de privacidad
+      %hr/
+      .row
+        .col-sm-4
+          .form-group
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+          .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+              %span{"aria-hidden" => "true"} ×
+            %strong Warning!
+            Better check yourself, you're not looking too good.
+        .col-sm-4
+          .form-group
+            = f.input :paternal_name, input_html: { class: 'form-control' }
+          .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+              %span{"aria-hidden" => "true"} ×
+            %strong Warning!
+            Better check yourself, you're not looking too good.
+        .col-sm-4
+          .form-group
+            = f.input :maternal_name, input_html: { class: 'form-control' }
+          .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+              %span{"aria-hidden" => "true"} ×
+            %strong Warning!
+            Better check yourself, you're not looking too good.
+      .row
+        .col-sm-6
+          .form-group
+            = f.input :email, input_html: { class: 'form-control' }
+          .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+              %span{"aria-hidden" => "true"} ×
+            %strong Warning!
+            Better check yourself, you're not looking too good.
+        .col-sm-6
+          .form-group
+            = f.input :phone_number, input_html: { class: 'form-control' }
+          .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+            %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+              %span{"aria-hidden" => "true"} ×
+            %strong Warning!
+            Better check yourself, you're not looking too good.
+      .block-xs
+      .row
+        .col-sm-4.col-sm-offset-4
+          %button.btn.btn-info.btn-block.btn-lg{ type: :submit }
+            Enviar datos
+            %i.fa.fa-paper-plane

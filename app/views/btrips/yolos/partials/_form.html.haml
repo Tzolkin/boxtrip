@@ -1,0 +1,87 @@
+= simple_form_for [:btrips, yolo], html: { role: 'form' }  do |b|
+  = b.input :origin_lat, as: :hidden
+  = b.input :origin_lng, as: :hidden
+  = b.input :destination_lat, as: :hidden
+  = b.input :destination_lng, as: :hidden
+  = b.input :distance, as: :hidden
+  = b.input :estimated_date, as: :hidden
+
+  #step1
+    %hr/
+    .row
+      .col-md-7
+        .input-group.input-group-registry
+          %span.input-group-addon.input-group-addon-registry
+            %i.fa.fa-building.fa-fw
+          = b.input :origin_address, label: false, input_html: { class: 'form-control calc-route', "aria-describedby" => "sizing-addon2", placeholder: "Dirección de origen" }
+        .col-md-12.no-padding
+          .input-group.input-group-registry
+            %span.input-group-addon.input-group-addon-registry
+              %i.fa.fa-truck.fa-fw
+            = b.input :destination_address, label: false, input_html: { class: 'form-control calc-route', "aria-describedby" => "sizing-addon2", placeholder: "Dirección de destino" }
+        .col-sm-7
+          %p.lb-registry.price Numero de artículos a trasladar:
+        .col-sm-4
+          .input-group.input-group-registry
+            %span.input-group-addon.input-group-addon-registry
+              %i.fa.fa-heart.fa-fw
+            = b.input :items_number, label: false, input_html: { class: 'form-control price', placeholder: '1', min: 1 }
+        .col-md-12
+          %p.lb-registry.price Fecha estimada de mudanza:
+        .col-sm-6
+          .input-group.input-group-registry
+            %span.input-group-addon.input-group-addon-registry
+              %i.fa.fa-calendar.fa-fw
+            %input#datetimepicker4.form-control.price{placeholder: "Fecha", type: "text"}/
+            :javascript
+              $(function () {
+                  $('#datetimepicker4').datetimepicker({
+                      format: "LL",
+                      viewMode: 'days'
+                  });
+              });
+          .alert.alert-info.alert-registry{role: "alert"}
+            %strong *Obligatorio
+        .col-sm-6
+          .input-group.input-group-registry
+            %span.input-group-addon.input-group-addon-registry
+              %i.fa.fa-clock-o.fa-fw
+            %input#datetimepicker5.form-control.price{placeholder: "Hora", type: "text"}/
+            :javascript
+              $(function () {
+                  $('#datetimepicker5').datetimepicker({
+                      format: 'LT'
+                  });
+              });
+          .alert.alert-info.alert-registry{role: "alert"}
+            %strong *Obligatorio
+      .col-md-5
+        #map-canvas.map-canvas
+        %p.lb-registry.price
+          %i.fa.fa-map-marker>
+          %strong Ruta estimada por Google Maps
+    .row
+      .col-sm-4.col-sm-offset-4.no-padding
+        %button.btn.btn-block.btn-type-mud.btn-info.btn-tarifa.ladda-button.md-text{"data-style" => "zoom-in"} Estimar tarifa
+    %hr/
+    .row#estimado.tarifa-hidden
+      .col-sm-4
+        %h2.pull-right Precio estimado:
+      .col-sm-4.center
+        %h1.p-info
+          %strong $1,500.00*
+    .row.tarifa-hidden
+      %hr/
+      .col-sm-9
+        %p.lb-registry.p-info Una vez que el servicio termine, en la app podrás agregar una propina para el proveedor.
+      .col-sm-3
+        %button#strep1continue.btn.btn-info.btn-block.btn-table.md-text
+          Continuar
+          %i.fa.fa-chevron-right
+    .row.tarifa-hidden
+      .col-md-12
+        %p.lb-registry.p-document.info *El precio estimado puede variar si el inventario reportado no es el real
+
+  #step2.tarifa-hidden
+    - yolo.build_customer_info if yolo.build_customer_info.blank?
+    = render partial: 'btrips/yolos/partials/customer_info', locals: { b: b }
