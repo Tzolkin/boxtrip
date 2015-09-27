@@ -1,0 +1,49 @@
+= content_for :stylesheets_includes do
+  = stylesheet_link_tag('/vendor/css/prism.css')
+  = stylesheet_link_tag('/vendor/css/build.css')
+
+.codrops-top.clearfix
+  -# %span.right
+    %a.menu-right.user-log
+      %span Volver a mi perfil
+  %span.right
+    %a#back.menu-right.three
+      %span Regresar
+%header.bg-header.price
+%section.contenido
+  .container.no-padding
+    .col-md-10.col-md-offset-1.col-form-registry.price
+      .row
+        .col-xs-4.col-sm-1.col-sm-offset-9
+          .progress-step.active
+            %label 1
+            %img{src: "/vendor/img/step1.png"}/
+        .col-xs-4.col-sm-1
+          .progress-step.active
+            %label 2
+            %img{src: "/vendor/img/step2.png"}/
+        .col-xs-4.col-sm-1
+          .progress-step
+            %label 3
+            %img{src: "/vendor/img/step3.png"}/
+      %h1
+        Servicio
+        %strong Tailored
+      %hr/
+      .row
+        .col-sm-12.col-boxtrip
+          .row.center
+            %h2
+              %strong
+            %h4.p-info
+              %strong Boxtrip
+              te ayuda
+            %p
+              Solo completa los siguientes datos y nosotros nos encargamos de ayudarte con tu mudanza. Para brindarte mayor seguridad de tus datos dale un vistazo a nuestro
+              %strong
+                %a.b-info{"data-target" => "#aviso", "data-toggle" => "modal", href: ""} Aviso de privacidad
+          %hr/
+          = render partial: '/btrips/tailoreds/partials/form'
+          %hr
+
+= render '/landing/partials/footer'

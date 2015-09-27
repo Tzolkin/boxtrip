@@ -154,13 +154,13 @@ $(function () {
   $('#yolo').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = '/btrips/yolo/new'
+      window.top.location.href = '/btrips/yolos/new'
     }, 1000);
   });
   $('#tailored').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
-      window.top.location.href = '/btrips/tailored/new'
+      window.top.location.href = '/btrips/tailoreds/new'
     }, 1000);
   });
 
@@ -295,26 +295,7 @@ $(function () {
       $('.tarifa-hidden').fadeIn('slow');
     }, 1500);
   });
-
-  $('.btn-table').click(function () {
-    $('body').fadeOut('slow');
-    setTimeout(function () {
-      window.top.location.href = 'user_data_yolo.html'
-    }, 1000);
-  });
-  $('#send').click(function () {
-    $('body').fadeOut('slow');
-    setTimeout(function () {
-      window.top.location.href = 'confirm_reservation.html'
-    }, 1000);
-  });
-  $('#send2').click(function () {
-    $('body').fadeOut('slow');
-    setTimeout(function () {
-      window.top.location.href = '/btrips/thanks'
-    }, 1000);
-  });
-
+  
   $('.btn-enterado').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {

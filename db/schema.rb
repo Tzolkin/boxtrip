@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902043452) do
+ActiveRecord::Schema.define(version: 20150925044717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20150902043452) do
 
   create_table "building_types", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "customer_infos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "paternal_name"
+    t.string   "maternal_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -127,11 +137,42 @@ ActiveRecord::Schema.define(version: 20150902043452) do
   add_index "partners", ["email"], name: "index_partners_on_email", unique: true, using: :btree
   add_index "partners", ["reset_password_token"], name: "index_partners_on_reset_password_token", unique: true, using: :btree
 
+  create_table "tailoreds", force: :cascade do |t|
+    t.integer  "customer_info_id"
+    t.date     "business_partner"
+    t.decimal  "quotation"
+    t.decimal  "price"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "vehicles", force: :cascade do |t|
     t.integer "partner_id"
     t.integer "year"
     t.string  "manufacturer"
     t.string  "model"
+  end
+
+  create_table "yolos", force: :cascade do |t|
+    t.integer  "customer_info_id"
+    t.string   "origin_address"
+    t.float    "origin_lat"
+    t.float    "origin_lng"
+    t.string   "destination_address"
+    t.float    "destination_lat"
+    t.float    "destination_lng"
+    t.decimal  "distance"
+    t.string   "distance_metric",     default: "m"
+    t.integer  "items_number"
+    t.date     "estimated_date"
+    t.time     "estimated_time"
+    t.decimal  "quotation"
+    t.decimal  "price"
+    t.boolean  "accepted_conditions"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

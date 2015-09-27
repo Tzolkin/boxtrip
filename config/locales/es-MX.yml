@@ -9,6 +9,18 @@ es-MX:
     attributes:
       customer:
         confirmation_token: 'Token de confirmación'
+      customer_info:
+        name: 'Nombre'
+        paternal_name: 'Apellido paterno'
+        maternal_name: 'Apellido materno'
+        email: 'Correo electrónico'
+        phone_number: 'Teléfono'
+      yolo:
+        origin_address: 'Dirección origen'
+        destination_address: 'Dirección destino'
+        items_number: 'Número de elementos'
+        estimated_date: 'Fecha estimada'
+        estimated_time: 'Hora estimada'
 
     errors:
       not_found: 'Este registro no existe o no se puede acceder a el en este momento'
@@ -234,6 +246,7 @@ es-MX:
     success_create: '%{value} creado satisfactoriamente.'
     success_update: '%{value} modificado satisfactoriamente.'
     success_delete: '%{value} eliminado satisfactoriamente.'
+    accepted: '%{value} aceptado.'
   state:
     true: 'Si'
     false: 'No'

@@ -1,0 +1,51 @@
+= simple_form_for [:btrips, tailored], html: { role: 'form' }  do |t|
+  - tailored.build_customer_info if tailored.build_customer_info.blank?
+  = t.simple_fields_for :customer_info do |f|
+    .row
+      .col-sm-4
+        .form-group
+          = f.input :name, required: true, input_html: { class: 'form-control' }
+        .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %strong Warning!
+          Better check yourself, you're not looking too good.
+      .col-sm-4
+        .form-group
+          = f.input :paternal_name, input_html: { class: 'form-control' }
+        .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %strong Warning!
+          Better check yourself, you're not looking too good.
+      .col-sm-4
+        .form-group
+          = f.input :maternal_name, input_html: { class: 'form-control' }
+        .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %strong Warning!
+          Better check yourself, you're not looking too good.
+    .row
+      .col-sm-6
+        .form-group
+          = f.input :email, input_html: { class: 'form-control' }
+        .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %strong Warning!
+          Better check yourself, you're not looking too good.
+      .col-sm-6
+        .form-group
+          = f.input :phone_number, input_html: { class: 'form-control' }
+        .alert.alert-info.alert-dismissible.alert-boxtrip{role: "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", type: "button"}
+            %span{"aria-hidden" => "true"} ×
+          %strong Warning!
+          Better check yourself, you're not looking too good.
+  .block-xs
+  .row
+    .col-sm-4.col-sm-offset-4
+      %button.btn.btn-info.btn-block.btn-lg{ type: :submit }
+        %i.fa.fa-star
+        Reservar

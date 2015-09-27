@@ -1,0 +1,54 @@
+= content_for :stylesheets_includes do
+  = stylesheet_link_tag('/vendor/css/bootstrap-datetimepicker.min.css')
+  = stylesheet_link_tag('/vendor/css/jquery-ui.min.css')
+  = stylesheet_link_tag('/vendor/css/ladda-themeless.min.css')
+  = stylesheet_link_tag('/vendor/css/prism.css')
+  = stylesheet_link_tag('/vendor/css/build.css')
+
+= content_for :javascript_includes do
+  = javascript_include_tag('/vendor/js/jquery-ui.min.js')
+  = javascript_include_tag('/vendor/js/spin.min.js')
+  = javascript_include_tag('/vendor/js/ladda.js')
+  %script{src: "http://maps.google.com/maps/api/js?sensor=false&libraries=geometry,places", type: "text/javascript"}
+  %script{src: "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", type: "text/javascript"}
+
+.codrops-top.clearfix
+  -# %span.right
+    %a.menu-right.user-log
+      %span Volver a mi perfil
+  %span.right
+    %a#back.menu-right.three
+      %span Regresar
+
+%header.bg-header.price
+%section.contenido
+  .container.no-padding
+    .col-md-10.col-md-offset-1.col-form-registry.price
+      .row
+        .col-xs-4.col-sm-1.col-sm-offset-9
+          .progress-step.active
+            %label 1
+            %img{src: "/vendor/img/step1.png"}
+        .col-xs-4.col-sm-1
+          .progress-step.active
+            %label 2
+            %img{src: "/vendor/img/step2.png"}
+        .col-xs-4.col-sm-1
+          .progress-step
+            %label 3
+            %img{src: "/vendor/img/step3.png"}
+      %h1
+        Reserva tu servicio
+        %strong YOLO
+      .row
+        .col-md-8
+          %h4
+            %span.p-info
+              Confirma
+              %strong tus datos
+      %hr
+      = render 'btrips/yolos/partials/confirm'
+
+= javascript_include_tag('/vendor/js/btrips.maps.js')
+
+= render '/landing/partials/footer'
