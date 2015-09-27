@@ -30,10 +30,6 @@ $(function() {
   btripMap.buildMap({
     internal: {
       id: 'map-canvas'
-    },
-    provider: {
-      zoom:      10,
-      center:    new google.maps.LatLng(19.3907336,-99.1436126)
     }
   },
   function() {
@@ -61,6 +57,25 @@ $(function() {
     });
   }
 
+  function loadRoute() {
+    var origin      = new google.maps.LatLng($('#yolo_origin_lat').val(), $('#yolo_origin_lng').val());
+    var destination = new google.maps.LatLng($('#yolo_destination_lat').val(), $('#yolo_destination_lng').val());
+
+    // debugger
+    var request = {
+      origin:      origin,
+      destination: destination,
+      travelMode:  google.maps.TravelMode.DRIVING
+    };
+    directionsService.route(request, function(response, status) {
+      $('#yolo_distance').val(response.routes[0].legs[0].distance.value);
+      calcEstimated();
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+      }
+    });
+  }
+  loadRoute();
   // Completer Section
   $("#yolo_origin_address")
     .geocomplete()
