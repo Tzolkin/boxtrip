@@ -8,11 +8,12 @@ class BtripsMailer < ApplicationMailer
 
   def tailored(user)
     @user = user
-    mail(to: @user.email, subject: 'Información de tu servicio Boxtrip')
+    mail(to: @user.email, subject: 'Información de tu servicio Tailored Boxtrip')
   end
 
-  def yolo(user)
-    @user = user
+  def yolo(yolo)
+    @user = yolo.customer_info
+    @yolo = yolo
     mail(to: @user.email, subject: 'Información de tu servicio Yolo Boxtrip')
   end
 end

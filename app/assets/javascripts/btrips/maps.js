@@ -38,17 +38,7 @@ $(function() {
   },
   function() {
     directionsDisplay.setMap(btripMap.getMap());
-    // if(navigator.geolocation)
-    //   navigator.geolocation.getCurrentPosition(displayOnMap);
   });
-
-  function displayOnMap(position){
-    var marker = btripMap.addMarker({
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    });
-    btripMap.map.centerOn(marker);
-  };
 
   function calcRoute() {
     var origin      = new google.maps.LatLng(origin_geometry.location.H, origin_geometry.location.L);
@@ -79,7 +69,6 @@ $(function() {
       $('#yolo_origin_lat').val(origin_geometry.location.H);
       $('#yolo_origin_lng').val(origin_geometry.location.L);
       validateGeometries();
-      // console.log(result);
     });
   $("#yolo_destination_address")
     .geocomplete()
@@ -88,7 +77,6 @@ $(function() {
       $('#yolo_destination_lat').val(destination_geometry.location.H);
       $('#yolo_destination_lng').val(destination_geometry.location.L);
       validateGeometries();
-      // console.log(result);
     });
 
   function validateGeometries() {

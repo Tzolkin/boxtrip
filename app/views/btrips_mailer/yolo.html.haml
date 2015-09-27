@@ -6,8 +6,8 @@
     %h1
       Hola #{@user.name}!
     %p
-      Aquí está la confirmación para el servicio TAILORED que solicitaste en Boxtrip.com.mx
-
+      Aquí está la confirmación para el servicio YOLO que solicitaste en Boxtrip.com.mx
+      %br
       Por favor, revisa tus datos.
 
     %p
@@ -22,3 +22,10 @@
       %br
       Teléfono: #{ @user.phone_number }
       %br
+    %hr
+    %p
+      Dirección origen: #{ @yolo.origin_address }
+      %br
+      Dirección destino: #{ @yolo.destination_address }
+      %br
+      Tarifa estimada: #{ number_to_currency(@yolo.quotation) }

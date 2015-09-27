@@ -1,4 +1,11 @@
 $(document).ready(function () {
+  $('#yolo_estimated_date').datetimepicker({
+    format: 'YYYY/MM/DD'
+  });
+  $('#yolo_estimated_time').datetimepicker({
+    format: 'HH:mm'
+  });
+  
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   });
@@ -17,9 +24,6 @@ $(document).ready(function () {
 
   $('#strep1continue').click(function () {
     if (validateStep1()) {
-      $('#yolo_estimated_date').val($('#datetimepicker4').val());
-      $('#yolo_estimated_time').val($('#datetimepicker5').val());
-
       $('#step1').fadeOut();
       setTimeout(function () {
         $('#step2').fadeIn('slow');
@@ -36,8 +40,8 @@ $(document).ready(function () {
       ($('#yolo_origin_address').val() != "") &&
       ($('#yolo_destination_address').val() != "") &&
       ($('#yolo_items_number').val() != "") &&
-      ($('#datetimepicker4').val() != "") &&
-      ($('#datetimepicker5').val() != "")
+      ($('#yolo_estimated_date').val() != "") &&
+      ($('#yolo_estimated_time').val() != "")
     ) {
       return true;
     }
@@ -67,13 +71,3 @@ Ladda.bind('.progress-demo .btn-estimated', {
     }, 200);
   }
 });
-
-function showContent() {
-  check = document.getElementById("checkbox12");
-  if (check.checked) {
-    $('#myModal3').modal('show');
-  }
-  else {
-    $('#myModal3').modal('hidden');;
-  }
-}

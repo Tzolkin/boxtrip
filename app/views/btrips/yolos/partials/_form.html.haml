@@ -4,8 +4,8 @@
   = b.input :destination_lat, as: :hidden
   = b.input :destination_lng, as: :hidden
   = b.input :distance, as: :hidden
-  = b.input :estimated_date, as: :hidden
-  = b.input :estimated_time, as: :hidden
+  -# = b.input :estimated_date, as: :hidden
+  -# = b.input :estimated_time, as: :hidden
   = b.input :quotation, as: :hidden
 
   #step1
@@ -34,26 +34,14 @@
           .input-group.input-group-registry
             %span.input-group-addon.input-group-addon-registry
               %i.fa.fa-calendar.fa-fw
-            %input#datetimepicker4.form-control.price{placeholder: "Fecha", type: "text"}/
-            :javascript
-              $(function () {
-                  $('#datetimepicker4').datetimepicker({
-                      format: 'YYYY/MM/DD',
-                  });
-              });
+            %input#yolo_estimated_date.form-control.price{placeholder: "Fecha", type: "text", name: 'yolo[estimated_date]' }
           .alert.alert-info.alert-registry{role: "alert"}
             %strong *Obligatorio
         .col-sm-6
           .input-group.input-group-registry
             %span.input-group-addon.input-group-addon-registry
               %i.fa.fa-clock-o.fa-fw
-            %input#datetimepicker5.form-control.price{placeholder: "Hora", type: "text"}/
-            :javascript
-              $(function () {
-                  $('#datetimepicker5').datetimepicker({
-                      format: 'LT'
-                  });
-              });
+            %input#yolo_estimated_time.form-control.price{placeholder: "Hora", type: "text", name: 'yolo[estimated_time]' }
           .alert.alert-info.alert-registry{role: "alert"}
             %strong *Obligatorio
       .col-md-5
