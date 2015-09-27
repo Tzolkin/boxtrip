@@ -24,4 +24,4 @@
 //= require gmaps/google
 //= require jquery.geocomplete.min
 //= require turbolinks
-//= require_tree .
+// require_tree .

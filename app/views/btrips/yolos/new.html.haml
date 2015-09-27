@@ -42,8 +42,8 @@
         Servicio
         %strong YOLO
       = render 'btrips/yolos/partials/form'
--# = javascript_include_tag('http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed')
-= javascript_include_tag('/vendor/js/btrips.maps.js')
-= javascript_include_tag('/vendor/js/btrips.yolos.js')
+
+= javascript_include_tag('btrips/maps.js')
+= javascript_include_tag('btrips/yolos.js')
 
 = render '/landing/partials/footer'
