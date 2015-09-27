@@ -20,8 +20,8 @@ Rails.application.routes.draw do
     get '/', to: 'services#index'
     get '/thanks', to: 'services#thanks'
     resources :tailoreds, only: [:index, :create, :new]
-    resources :yolos, only: [:index, :create, :new] do
-      put '/confirm', to: 'yolos#confirm'
+    resources :yolos, only: [:index, :create, :new, :update] do
+      get '/confirm', to: 'yolos#confirm'
     end
     get 'yolos/calc_estimated', to: 'yolos#calc_estimated'
   end

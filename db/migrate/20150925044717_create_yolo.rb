@@ -9,7 +9,7 @@ class CreateYolo < ActiveRecord::Migration
       t.float :destination_lat
       t.float :destination_lng
       t.decimal :distance
-      t.string :distance_metric, defaul: 'm'
+      t.string :distance_metric, default: 'm'
       t.integer :items_number
       t.date :estimated_date
       t.time :estimated_time

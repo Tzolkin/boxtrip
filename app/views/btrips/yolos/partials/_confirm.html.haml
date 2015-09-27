@@ -1,0 +1,61 @@
+= simple_form_for [:btrips, yolo], html: { role: 'form' }  do |b|
+  = b.input :origin_lat, as: :hidden
+  = b.input :origin_lng, as: :hidden
+  = b.input :destination_lat, as: :hidden
+  = b.input :destination_lng, as: :hidden
+  = b.input :distance, as: :hidden
+  = b.input :quotation, as: :hidden
+
+  .row
+    .col-md-8
+      .col-sm-2.no-padding
+        %p.lb-registry.price
+          %strong Cliente:
+      .col-sm-10.no-padding.input-group-registry
+        %input.form-control{ disabled: true, value: yolo.customer_full_name }
+      .col-sm-4.no-padding
+        %p.lb-registry.price
+          %strong Dirección del origen:
+      .col-sm-8.no-padding.input-group-registry
+        = b.input :origin_address, label: false, input_html: { class: 'form-control calc-route', "aria-describedby" => "sizing-addon2", placeholder: "Dirección de origen" }
+      .col-sm-4.no-padding
+        %p.lb-registry.price
+          %strong Dirección de destino:
+      .col-sm-8.no-padding.input-group-registry
+        = b.input :destination_address, label: false, input_html: { class: 'form-control calc-route', "aria-describedby" => "sizing-addon2", placeholder: "Dirección de destino" }
+      .col-sm-12
+        %hr/
+        %p.lb-registry
+          Para ofrecerte un mejor servicio es
+          %strong MUY
+          importante que estes seguro(a) de los datos que ingresaste en la reservación para evitarte retrasos y contratiempos.
+          %br/
+          Te recomendamos ampliamente leer las preguntas frecuentes
+          -# %a.p-info{:href => ""} preguntas frecuentes
+          antes de continuar con la reservación.
+    .col-sm-4
+      #map-canvas
+      %p.lb-registry.price
+        %i.fa.fa-map-marker>
+
+        %strong Ruta estimada por Google Maps
+  %hr/
+  .row
+    .checkbox.checkbox-info.center
+      %input#accepted_conditions.styled{ type: :checkbox, name: 'yolo[accepted_conditions]' }
+      %label.lb-registry{:for => "checkbox4"}
+        He leído y acepto
+        %a.p-info{ href: "/privacy", target: '_blank' } Términos y condiciones
+        del servicio y la
+        %a.p-info{ href: "/privacy", target: '_blank' } Política de privacidad
+        de Boxtrip
+  .row
+    %h4.center-info
+      ¿Toda la información
+      %strong es correcta ?
+  .row
+    .col-md-4.col-md-offset-4
+      %button.btn.btn-primary.btn-type-mud.btn-mudanza.btn-proveedor.btn-finish
+        %i.fa.fa-star
+          Hacer
+        %strong reservación

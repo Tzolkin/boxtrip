@@ -163,7 +163,7 @@ ActiveRecord::Schema.define(version: 20150925044717) do
     t.float    "destination_lat"
     t.float    "destination_lng"
     t.decimal  "distance"
-    t.string   "distance_metric"
+    t.string   "distance_metric",     default: "m"
     t.integer  "items_number"
     t.date     "estimated_date"
     t.time     "estimated_time"

@@ -7,8 +7,6 @@ AllCops:
     - Rakefile
     - config.ru
   Exclude:
-    - 'vendor/**/*'
-    - 'app/views/**/*'
     - db/schema.rb
 
 LineLength:

@@ -77,24 +77,3 @@ function showContent() {
     $('#myModal3').modal('hidden');;
   }
 }
-
-// Calculate estimated
-function calcEstimated() {
-  var estimated;
-  var distance = $('#yolo_distance').val();
-
-  $.ajax({
-    data: { 'distance': distance },
-    type: 'GET',
-    data_type: 'JSON',
-    url: '/btrips/yolos/calc_estimated',
-    success: function(response) {
-      var estimated = parseFloat(response.estimated);
-      $('#yolo_quotation').val(response.estimated);
-      $('#price-quotation').text(estimated.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' }));
-    },
-    error: function(response) {
-
-    }
-  });
-}

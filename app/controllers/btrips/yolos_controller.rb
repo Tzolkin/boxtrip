@@ -3,9 +3,31 @@ module Btrips
     expose(:yolo, attributes: :yolo_params)
 
     def create
+      if yolo.save
+        flash[:success] = t('notification.success_create', value: 'Servicio yolo')
+        redirect_to btrips_yolo_confirm_path(yolo.id)
+      else
+        flash[:error] = yolo.errors.full_messages
+        redirect_to :back
+      end
     end
 
     def confirm
+      yolo = Yolo.find(params['yolo_id'])
+      if yolo.accepted_conditions
+        redirect_to btrips_thanks_path
+      end
+    end
+
+    def update
+      if yolo.save
+        yolo.send_email
+        flash[:success] = t('notification.accepted', value: 'Servicio yolo')
+        redirect_to btrips_thanks_path
+      else
+        flash[:error] = yolo.errors.full_messages
+        redirect_to :back
+      end
     end
 
     def calc_estimated
@@ -19,15 +41,17 @@ module Btrips
 
     def yolo_params
       params.require(:yolo).permit(
-        :origin_addres,
+        :origin_address,
         :origin_lat,
         :origin_lng,
-        :destination_addres,
+        :destination_address,
         :destination_lat,
         :destination_lng,
         :distance,
         :items_number,
         :estimated_date,
+        :estimated_time,
+        :quotation,
         :accepted_conditions,
         customer_info_attributes: [:name, :paternal_name, :maternal_name, :email, :phone_number]
       )

@@ -10,4 +10,9 @@ class BtripsMailer < ApplicationMailer
     @user = user
     mail(to: @user.email, subject: 'Información de tu servicio Boxtrip')
   end
+
+  def yolo(user)
+    @user = user
+    mail(to: @user.email, subject: 'Información de tu servicio Yolo Boxtrip')
+  end
 end
