@@ -1,5 +1,5 @@
 class BtripsMailer < ApplicationMailer
-  default from: 'service@boxtrip.com'
+  default from: 'service@dti-design.com'
 
   def sample_email(user)
     @user = user
