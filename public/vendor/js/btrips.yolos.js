@@ -2,6 +2,47 @@ $(document).ready(function () {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   });
+
+  $('.btn-estimated').click(function () {
+    if ($('#yolo_distance').val() == '') {
+      alert("Ingresa las direcciones");
+    }
+    else {
+      calcEstimated();
+      setTimeout(function () {
+        $('#estimado').fadeIn('slow');
+      }, 1500);
+    }
+  });
+
+  $('#strep1continue').click(function () {
+    if (validateStep1()) {
+      $('#yolo_estimated_date').val($('#datetimepicker4').val());
+      $('#yolo_estimated_time').val($('#datetimepicker5').val());
+
+      $('#step1').fadeOut();
+      setTimeout(function () {
+        $('#step2').fadeIn('slow');
+        $('#progress-step-2').addClass('active');
+      }, 1000);
+    }
+    else {
+      alert('Complete la informacion solicitada.');
+    }
+  });
+
+  function validateStep1() {
+    if (
+      ($('#yolo_origin_address').val() != "") &&
+      ($('#yolo_destination_address').val() != "") &&
+      ($('#yolo_items_number').val() != "") &&
+      ($('#datetimepicker4').val() != "") &&
+      ($('#datetimepicker5').val() != "")
+    ) {
+      return true;
+    }
+    return false;
+  }
 });
 
 $('.ui-widget.log').niceScroll({
@@ -9,10 +50,10 @@ $('.ui-widget.log').niceScroll({
 });
 
 // Bind normal buttons
-Ladda.bind('div:not(.progress-demo) .btn-tarifa', { timeout: 1500 });
+Ladda.bind('div:not(.progress-demo) .btn-estimated', { timeout: 1500 });
 
 // Bind progress buttons and simulate loading progress
-Ladda.bind('.progress-demo .btn-tarifa', {
+Ladda.bind('.progress-demo .btn-estimated', {
   callback: function (instance) {
     var progress = 0;
     var interval = setInterval(function () {
@@ -35,4 +76,25 @@ function showContent() {
   else {
     $('#myModal3').modal('hidden');;
   }
+}
+
+// Calculate estimated
+function calcEstimated() {
+  var estimated;
+  var distance = $('#yolo_distance').val();
+
+  $.ajax({
+    data: { 'distance': distance },
+    type: 'GET',
+    data_type: 'JSON',
+    url: '/btrips/yolos/calc_estimated',
+    success: function(response) {
+      var estimated = parseFloat(response.estimated);
+      $('#yolo_quotation').val(response.estimated);
+      $('#price-quotation').text(estimated.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' }));
+    },
+    error: function(response) {
+
+    }
+  });
 }

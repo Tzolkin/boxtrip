@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :yolos, only: [:index, :create, :new] do
       put '/confirm', to: 'yolos#confirm'
     end
+    get 'yolos/calc_estimated', to: 'yolos#calc_estimated'
   end
 
   namespace :customer do

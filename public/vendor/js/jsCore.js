@@ -295,14 +295,7 @@ $(function () {
       $('.tarifa-hidden').fadeIn('slow');
     }, 1500);
   });
-
-  $('.btn-table').click(function () {
-    $('body').fadeOut('slow');
-    setTimeout(function () {
-      window.top.location.href = 'user_data_yolo.html'
-    }, 1000);
-  });
-
+  
   $('.btn-enterado').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {

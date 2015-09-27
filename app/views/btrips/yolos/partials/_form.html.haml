@@ -5,6 +5,8 @@
   = b.input :destination_lng, as: :hidden
   = b.input :distance, as: :hidden
   = b.input :estimated_date, as: :hidden
+  = b.input :estimated_time, as: :hidden
+  = b.input :quotation, as: :hidden
 
   #step1
     %hr/
@@ -36,8 +38,7 @@
             :javascript
               $(function () {
                   $('#datetimepicker4').datetimepicker({
-                      format: "LL",
-                      viewMode: 'days'
+                      format: 'YYYY/MM/DD',
                   });
               });
           .alert.alert-info.alert-registry{role: "alert"}
@@ -62,25 +63,26 @@
           %strong Ruta estimada por Google Maps
     .row
       .col-sm-4.col-sm-offset-4.no-padding
-        %button.btn.btn-block.btn-type-mud.btn-info.btn-tarifa.ladda-button.md-text{"data-style" => "zoom-in"} Estimar tarifa
-    %hr/
-    .row#estimado.tarifa-hidden
-      .col-sm-4
-        %h2.pull-right Precio estimado:
-      .col-sm-4.center
-        %h1.p-info
-          %strong $1,500.00*
-    .row.tarifa-hidden
+        %button.btn.btn-block.btn-type-mud.btn-info.btn-estimated.ladda-button.md-text{"data-style" => "zoom-in", type: :button} Estimar tarifa
+    #estimado.tarifa-hidden
       %hr/
-      .col-sm-9
-        %p.lb-registry.p-info Una vez que el servicio termine, en la app podrás agregar una propina para el proveedor.
-      .col-sm-3
-        %button#strep1continue.btn.btn-info.btn-block.btn-table.md-text
-          Continuar
-          %i.fa.fa-chevron-right
-    .row.tarifa-hidden
-      .col-md-12
-        %p.lb-registry.p-document.info *El precio estimado puede variar si el inventario reportado no es el real
+      .row
+        .col-sm-4
+          %h2.pull-right Precio estimado:
+        .col-sm-4.center
+          %h1.p-info
+            %strong#price-quotation $1,500.00*
+      .row
+        %hr/
+        .col-sm-9
+          %p.lb-registry.p-info Una vez que el servicio termine, en la app podrás agregar una propina para el proveedor.
+        .col-sm-3
+          %button#strep1continue.btn.btn-info.btn-block.btn-table.md-text{ type: :button }
+            Continuar
+            %i.fa.fa-chevron-right
+      .row
+        .col-md-12
+          %p.lb-registry.p-document.info *El precio estimado puede variar si el inventario reportado no es el real
 
   #step2.tarifa-hidden
     - yolo.build_customer_info if yolo.build_customer_info.blank?

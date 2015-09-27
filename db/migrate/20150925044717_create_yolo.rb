@@ -11,7 +11,8 @@ class CreateYolo < ActiveRecord::Migration
       t.decimal :distance
       t.string :distance_metric, defaul: 'm'
       t.integer :items_number
-      t.datetime :estimated_date
+      t.date :estimated_date
+      t.time :estimated_time
       t.decimal :quotation
       t.decimal :price
       t.boolean :accepted_conditions

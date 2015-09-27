@@ -8,6 +8,13 @@ module Btrips
     def confirm
     end
 
+    def calc_estimated
+      distance = params['distance']
+      estimated = (distance.to_d / 7)
+
+      render json: { estimated: estimated }
+    end
+
     private
 
     def yolo_params

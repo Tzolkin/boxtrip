@@ -41,6 +41,7 @@ $(function() {
     };
     directionsService.route(request, function(response, status) {
       $('#yolo_distance').val(response.routes[0].legs[0].distance.value);
+      calcEstimated();
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
       }
