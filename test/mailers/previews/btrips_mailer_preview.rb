@@ -7,4 +7,8 @@ class BtripsMailerPreview < ActionMailer::Preview
   def tailored_preview
     BtripsMailer.tailored(Tailored.first.customer_info)
   end
+
+  def yolo_preview
+    BtripsMailer.yolo(Yolo.first)
+  end
 end

@@ -19,7 +19,7 @@ class Yolo < ActiveRecord::Base
     if self.accepted_conditions && self.status.blank?
       self.status = "Accepted"
       self.save
-      BtripsMailer.tailored(customer_info).deliver
+      BtripsMailer.yolo(self).deliver
     end
   end
 end
