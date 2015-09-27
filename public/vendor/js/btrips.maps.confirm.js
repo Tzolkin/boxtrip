@@ -61,7 +61,6 @@ $(function() {
     var origin      = new google.maps.LatLng($('#yolo_origin_lat').val(), $('#yolo_origin_lng').val());
     var destination = new google.maps.LatLng($('#yolo_destination_lat').val(), $('#yolo_destination_lng').val());
 
-    // debugger
     var request = {
       origin:      origin,
       destination: destination,
@@ -76,6 +75,7 @@ $(function() {
     });
   }
   loadRoute();
+  
   // Completer Section
   $("#yolo_origin_address")
     .geocomplete()

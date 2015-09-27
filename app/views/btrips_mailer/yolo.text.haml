@@ -1,0 +1,14 @@
+Hola #{@user.name}!
+
+Aquí está la confirmación para el servicio YOLO que solicitaste en Boxtrip.com.mx
+
+Por favor, revisa tus datos.
+
+Nombre: #{ @user.name }
+Apellido paterno: #{ @user.paternal_name }
+Apellido materno: #{ @user.maternal_name }
+Email: #{ @user.email }
+Teléfono: #{ @user.phone_number }
+Dirección origen: #{ @yolo.origin_address }
+Dirección destino: #{ @yolo.destination_address }
+Tarifa estimada: #{ number_to_currency(@yolo.quotation) }
