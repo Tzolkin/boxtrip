@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Hola #{@user.name}!
+    %p
+      Aquí está la confirmación para el servicio que solicitaste en Boxtrip.com.mx
+
+      Por favor, revisa tus datos.
+
+    %p
+      Nombre: #{ @user.name }
+      %br
+      Apellido paterno: #{ @user.paternal_name }
+      %br
+      Apellido materno: #{ @user.maternal_name }
+      %br
+      %hr
+      Email: #{ @user.email }
+      %br
+      Teléfono: #{ @user.phone_number }
+      %br

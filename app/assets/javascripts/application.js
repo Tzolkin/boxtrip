@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require twitter/bootstrap
 //= require jquery.easing.1.3.min
 //= require jquery.nicescroll
@@ -19,5 +20,8 @@
 //= require loadgo.min
 //= require moment
 //= require bootstrap-datetimepicker.min
+//= require underscore
+//= require gmaps/google
+//= require jquery.geocomplete.min
 //= require turbolinks
 //= require_tree .

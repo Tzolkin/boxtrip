@@ -16,11 +16,14 @@ Rails.application.routes.draw do
 
   root 'landing#index'
   get 'privacy', to: 'landing#privacy'
-  namespace :btrips, only: :index do
+  namespace :btrips do
     get '/', to: 'services#index'
     get '/thanks', to: 'services#thanks'
-    resources :tailored, only: :new
-    resources :yolo, only: :new
+    resources :tailoreds, only: [:index, :create, :new]
+    resources :yolos, only: [:index, :create, :new, :update] do
+      get '/confirm', to: 'yolos#confirm'
+    end
+    get 'yolos/calc_estimated', to: 'yolos#calc_estimated'
   end
 
   namespace :customer do
