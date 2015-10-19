@@ -29,6 +29,8 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
     = content_for :javascript_includes
+    %script{ src: "/vendor/js/snap.svg-min.js" }
+    %script{ src: "/vendor/js/slider.js" }
     %script{ src: "/vendor/js/jsCore.js" }
     = csrf_meta_tags
 

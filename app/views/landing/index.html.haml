@@ -239,34 +239,15 @@
             Es
             %strong fácil, rápido, accesible y eficaz.
           %br/
-        .col-xs-12.col-sm-4.col-sm-offset-2
+        .col-sm-4.col-sm-offset-4
           %button.btn.btn-mudanza.btn-type-mud.btn-residencial.btn-index.btn-cotizar
             Cotizar
             %strong Traslado
-        .col-xs-12.col-sm-4
-          %button.btn.btn-mudanza.btn-type-mud.btn-stands.ex-text.btn-index
-            %strong Únete a nuestro equipo
-  %section.funciona
-    .container
-      .row.row-title
-        %label Menciones
-        %p
-          %strong.p-info Boxtrip
-          ha sido mencionado en diferentes medios de comunicación, te invitamos a que le eches un vistazo.
-      .row.center.logos
-        .col-sm-3
-          %img#excelsior{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/excelsior.png", title: "Ver nota en Excelsior"}/
-        .col-sm-3
-          %img#financiero{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/financiero.png", title: "Ver nota en el Financiero"}/
-        .col-sm-3
-          %img#angelhack{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/angelhack2.png", title: "Ver nota en Angelhack"}/
-        .col-sm-3
-          %img#mastercard{"data-placement" => "top", "data-toggle" => "tooltip", src: "/vendor/img/mastercard.png", title: "Ver nota en Mastercard"}/
-      .row.center
-        .col-sm-6.col-sm-offset-3
-          .embed-responsive.embed-responsive-16by9
-            %iframe.embed-responsive-item{allowfullscreen: "", frameborder: "0", src: "https://www.youtube.com/embed/28LUVpbhJCo"}
-      #pasos.arrow.animated.bounce{"data-placement" => "top", "data-toggle" => "tooltip", title: "¿Deseas cotizar tu traslado ahora?"}
-        %i.fa.fa-chevron-up
+        / .col-xs-12.col-sm-4
+        /   %button.btn.btn-mudanza.btn-type-mud.btn-stands.ex-text.btn-index
+        /     %strong Únete a nuestro equipo
+  = render 'landing/partials/mentions'
+
+= render 'landing/partials/rewards'
 
 = render 'landing/partials/footer'
