@@ -127,6 +127,63 @@ $(function () {
   };
 });
 
+$(function () {
+    // We create an interval which will be removed when progress completes
+    $('#ipn').click(function () {
+        $(this).loadgo();
+        mainDemo();
+        setTimeout(function () {
+            window.open('http://www.comunicacionsocial.ipn.mx/Documents/Comunicados/COM-216-2015.pdf', '_blank')
+        }, 3000);
+    });
+
+    var logoInterval;
+    function mainDemo() {
+        var p = 0;
+        $('#ipn').loadgo('resetprogress');   // reset progress to start again
+        logoInterval = window.setInterval(function () {
+            if ($('#ipn').loadgo('getprogress') == 100) {
+                // When progress completes, we have to clear the interval
+                window.clearInterval(logoInterval);
+            }
+            else {
+                var prog = p * 10;
+                $('#ipn').loadgo('setprogress', prog);
+                p++;
+            }
+        }, 150);
+    };
+});
+
+
+$(function () {
+    // We create an interval which will be removed when progress completes
+    $('#jornada').click(function () {
+        $(this).loadgo();
+        mainDemo();
+        setTimeout(function () {
+            window.open('http://www.jornada.unam.mx/2015/10/09/sociedad/042n3soc', '_blank')
+        }, 3000);
+    });
+
+    var logoInterval;
+    function mainDemo() {
+        var p = 0;
+        $('#jornada').loadgo('resetprogress');   // reset progress to start again
+        logoInterval = window.setInterval(function () {
+            if ($('#jornada').loadgo('getprogress') == 100) {
+                // When progress completes, we have to clear the interval
+                window.clearInterval(logoInterval);
+            }
+            else {
+                var prog = p * 10;
+                $('#jornada').loadgo('setprogress', prog);
+                p++;
+            }
+        }, 150);
+    };
+});
+
 //Tooltips
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
