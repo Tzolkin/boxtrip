@@ -41,8 +41,8 @@ $(function() {
   });
 
   function calcRoute() {
-    var origin      = new google.maps.LatLng(origin_geometry.location.H, origin_geometry.location.L);
-    var destination = new google.maps.LatLng(destination_geometry.location.H, destination_geometry.location.L);
+    var origin      = new google.maps.LatLng(origin_geometry.location.lat(), origin_geometry.location.lng());
+    var destination = new google.maps.LatLng(destination_geometry.location.lat(), destination_geometry.location.lng());
 
     // TODO clear Markers
     btripMap.removeMarkers();
