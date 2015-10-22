@@ -4,9 +4,14 @@ var origin_geometry, destination_geometry;
 function calcEstimated() {
   var estimated;
   var distance = $('#yolo_distance').val();
+  var data = {
+    'distance': distance,
+    'items': $('#yolo_items_number').val(),
+    'mins': $('#yolo_mins').val()
+  };
 
   $.ajax({
-    data: { 'distance': distance },
+    data: data,
     type: 'GET',
     data_type: 'JSON',
     url: '/btrips/yolos/calc_estimated',
@@ -54,6 +59,7 @@ $(function() {
     };
     directionsService.route(request, function(response, status) {
       $('#yolo_distance').val(response.routes[0].legs[0].distance.value);
+      $('#yolo_mins').val(response.routes[0].legs[0].duration.value);
       calcEstimated();
       if (status == google.maps.DirectionsStatus.OK) {
         directionsDisplay.setDirections(response);
@@ -63,20 +69,50 @@ $(function() {
 
   // Completer Section
   $("#yolo_origin_address")
-    .geocomplete()
+    .geocomplete({
+      language: 'es-MX',
+      address: 'Distrito Federal',
+      componentRestrictions: {
+        country: 'MX'
+      }
+    })
     .bind("geocode:result", function(event, result) {
-      origin_geometry = result.geometry;
-      $('#yolo_origin_lat').val(origin_geometry.location.H);
-      $('#yolo_origin_lng').val(origin_geometry.location.L);
-      validateGeometries();
+      var reg_expresion = /D.F./;
+      if (reg_expresion.test(result.formatted_address)) {
+        origin_geometry = result.geometry;
+        $('#yolo_origin_lat').val(origin_geometry.location.H);
+        $('#yolo_origin_lng').val(origin_geometry.location.L);
+        validateGeometries();
+      }
+      else {
+        $(this).val('');
+        $('#yolo_origin_lat').val('');
+        $('#yolo_origin_lng').val('');
+        window.alert('El servicio YOLO no se encuentra disponible en la dirección seleccionada.');
+      }
     });
   $("#yolo_destination_address")
-    .geocomplete()
+    .geocomplete({
+      language: 'es-MX',
+      address: 'Distrito Federal',
+      componentRestrictions: {
+        country: 'MX'
+      }
+    })
     .bind("geocode:result", function(event, result) {
-      destination_geometry = result.geometry;
-      $('#yolo_destination_lat').val(destination_geometry.location.H);
-      $('#yolo_destination_lng').val(destination_geometry.location.L);
-      validateGeometries();
+      var reg_expresion = /D.F./;
+      if (reg_expresion.test(result.formatted_address)) {
+        destination_geometry = result.geometry;
+        $('#yolo_destination_lat').val(destination_geometry.location.H);
+        $('#yolo_destination_lng').val(destination_geometry.location.L);
+        validateGeometries();
+      }
+      else {
+        $(this).val('');
+        $('#yolo_destination_lat').val('');
+        $('#yolo_destination_lng').val('');
+        window.alert('El servicio YOLO no se encuentra disponible en la dirección seleccionada.');
+      }
     });
 
   function validateGeometries() {

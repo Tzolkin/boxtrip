@@ -31,10 +31,11 @@ module Btrips
     end
 
     def calc_estimated
-      distance = params['distance']
-      estimated = (distance.to_d / 7)
+      estimate = Estimate.new(params['distance'], params['items'], params['mins'])
 
-      render json: { estimated: estimated }
+      total = estimate.calculate
+
+      render json: { estimated: total[:grand_total] }
     end
 
     private
@@ -53,6 +54,7 @@ module Btrips
         :estimated_time,
         :quotation,
         :accepted_conditions,
+        :time,
         customer_info_attributes: [:name, :paternal_name, :maternal_name, :email, :phone_number]
       )
     end
