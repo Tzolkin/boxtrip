@@ -1,0 +1,53 @@
+!!!
+%html{ lang: "en" }
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ content: "IE=edge", "http-equiv" => "X-UA-Compatible" }
+    %meta{ content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", name: "viewport" }
+    %title Boxtrip | Admin
+    %meta{ content: "Boxtrip. El servicio fácil de mudanzas.", name: "description" }
+    %meta{ content: "moving, moving fast, easy moving", name: "keywords" }
+    %meta{ content: "RandomWalker", name: "author" }
+    %link{ href: "/vendor/img/favicon.png", rel: "icon", sizes: "16x16", type: "image/png" }
+
+    / Estilos
+    %link{ href: "/vendor/css/fixed.css", rel: "stylesheet" }
+    %link{ href: "/vendor/css/bootstrap.min.css", rel: "stylesheet" }
+    %link{ href: "/vendor/css/font-awesome.min.css", rel: "stylesheet" }
+    = content_for :stylesheets_includes
+    %link{href: "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css", rel: "stylesheet", type: "text/css"}/
+    %link{href: "/vendor/css/dataTables.bootstrap.css", rel: "stylesheet"}/
+    %link{href: "/vendor/css/fullcalendar.min.css", rel: "stylesheet"}/
+    %link{href: "/vendor/css/fullcalendar.print.css", media: "print", rel: "stylesheet"}/
+    %link{href: "/vendor/css/bootstrap-rating.css", rel: "stylesheet"}/
+    %link{href: "/vendor/css/AdminLTE.css", rel: "stylesheet"}/
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+
+    / Javascript
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+  %body.skin-black.sidebar-mini
+    = render partial: "partials/flash"
+    = yield
+
+    / Javascript
+    %script{ src: "/vendor/js/jquery-1.11.1.min.js" }
+    %script{ src: "/vendor/js/bootstrap-rating.js" }
+    %script{ src: "/vendor/js/jquery-ui.min.js" }
+    %script{ src: "/vendor/js/jquery.dataTables.min.js" }
+    %script{ src: "/vendor/js/dataTables.bootstrap.min.js" }
+    %script{ src: "/vendor/js/app.min.js" }
+    %script{ src: "/vendor/js/fullcalendar.min.js" }
+    / Scripts Forma de Pago
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js", type: "text/javascript"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js", type: "text/javascript"}
+    / If you're using Stripe for payments
+    %script{src: "https://js.stripe.com/v2/", type: "text/javascript"}
+    = content_for :javascript_includes
