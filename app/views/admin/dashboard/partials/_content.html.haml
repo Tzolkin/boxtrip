@@ -1,0 +1,44 @@
+.content-wrapper
+  %section.content-header
+  %section.content.tab-content
+    #admin_content.tab-pane.fade.in.active{ role: "tabpanel" }
+      .row
+        .col-sm-12
+          .callout.callout-warning
+            %h4 Registros
+            %p Detalles de usuarios registrados.
+      .row
+        .col-sm-12
+          .box.box-success
+            .box-header
+              %h3.box-title
+                %strong
+                  %i.fa.fa-user-plus
+                  Usuarios registrados
+            / /.box-header
+            .box-body.table-responsive
+              %table#usuarios.table.table-bordered.table-striped
+                %thead
+                  %tr.boxtrip-success
+                    %th ID
+                    %th Nombre
+                    %th Correo electrónico
+                    %th Teléfono
+                    %th Tipo de servicio
+                %tbody
+                  - @tailoreds.each do |tailored|
+                    - customer = tailored.customer_info
+                    %tr
+                      %td= customer.id
+                      %td= customer.full_name
+                      %td= customer.email
+                      %td= customer.phone_number
+                      %td TAILORED
+                  - @yolos.each do |yolo|
+                    - customer = yolo.customer_info
+                    %tr
+                      %td= customer.id
+                      %td= customer.full_name
+                      %td= customer.email
+                      %td= customer.phone_number
+                      %td YOLO

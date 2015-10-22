@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, path: 'admin', skip: :registrations
   devise_for :customers,
              path: 'customer',
              controllers: {
@@ -36,6 +37,12 @@ Rails.application.routes.draw do
 
   namespace :partner do
     scope ':partner_id' do
+      get '/', to: 'dashboard#home'
+    end
+  end
+
+  namespace :admin do
+    scope ':admin_id' do
       get '/', to: 'dashboard#home'
     end
   end

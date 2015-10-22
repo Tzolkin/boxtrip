@@ -1,0 +1,49 @@
+%header.main-header
+  / Logo
+  %a.logo{ href: "" }
+    / mini logo for sidebar mini 50x50 pixels
+    %span.logo-mini
+      %b
+        A
+      dm
+    / logo for regular state and mobile devices
+    %span.logo-lg
+      %b
+        %img{ src: "/vendor/img/admin.png"}
+          Boxtrip
+      Admin
+  / Header Navbar
+  %nav.navbar.navbar-static-top{ role: "navigation" }
+    / Sidebar toggle button
+    %a.sidebar-toggle{"data-toggle" => "offcanvas", href: "#", role: "button"}
+      %span.sr-only Toggle navigation
+    / Navbar Right Menu
+    .navbar-custom-menu
+      %ul.nav.navbar-nav
+        / User Account Menu
+        %li.dropdown.user.user-menu
+          / Menu Toggle Button
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            / The user image in the navbar
+            %img.user-image{ alt: "User Image", src: "/vendor/img/dashboard/truck_128X128.png" }
+            / hidden-xs hides the username on small devices so only the image appears.
+            %span.hidden-xs Administrator
+          %ul.dropdown-menu
+            / The user image in the menu
+            %li.user-header
+              %img.img-circle{ alt: "User Image", src: "/vendor/img/dashboard/truck_128X128.png" }
+              %p
+                Administrador
+                %small Miembro desde Mayo del 2015
+            / Menu Body
+            %li.user-body
+              .col-xs-12.text-center
+                %a{ href: "#" }
+                  Reservaciones realizas
+                  %label.label.label-info
+                    = @tailoreds.count + @yolos.count
+            / Menu Footer
+            %li.user-footer
+              .pull-right
+                = link_to 'Cerrar sesión', destroy_admin_session_path, method: :delete, class: "btn btn-danger btn-flat btn-logout"
+                -# %a.btn.btn-danger.btn-flat.btn-logout{ href: destroy_admin_session_path, method: :delete } Cerrar sesión

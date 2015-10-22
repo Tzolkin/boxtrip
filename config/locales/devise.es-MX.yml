@@ -1,6 +1,6 @@
 # Additional translations at http://github.com/plataformatec/devise/wiki/I18n
 
-es:
+es-MX:
   errors:
     messages:
       expired: "ha expirado, por favor pida uno nuevo"
@@ -21,6 +21,8 @@ es:
       invalid_token: 'Ficha de autenticación invalida.'
       timeout: 'Su sesión ha expirado, por favor ingrese nuevamente para continuar.'
       inactive: 'Su cuenta aún no ha sido activada.'
+      admin:
+        unauthenticated: 'Necesitas iniciar sesión antes de continuar.'
     sessions:
       signed_in: 'Ingreso exitoso.'
       signed_out: 'Usted ha salido del sistema.'
