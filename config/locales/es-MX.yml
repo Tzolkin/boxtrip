@@ -254,6 +254,8 @@ es-MX:
     failure:
       customer:
         not_found_in_database: 'El usuario no existe en nuestra base de datos'
+      admin:
+        not_found_in_database: 'El administrador no existe en nuestra base de datos'
     registrations:
       customer:
         signed_up_but_unconfirmed: 'Por favor revise tu correo y confirme el registro'

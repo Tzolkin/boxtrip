@@ -1,0 +1,25 @@
+.codrops-top.clearfix
+  / <span class="right"><a class="menu-right"><span>Iniciar sesión  </span></a></span>
+  %span.right
+    %a#back.menu-right.three
+      %span Regresar
+%section.login
+  .container
+    .col-sm-4.col-sm-offset-4.col-login
+      %h5
+        %img{src: "/vendor/img/logo_boxtrip.png"}/
+        Boxtrip
+      %h5
+        %strong= "INICIAR SESIÓN DE #{ resource_name == :admin ? 'ADMINISTRADOR' : 'USUARIO' }"
+      %hr
+      = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+        .form-group
+          = f.text_field :email, required: true, autofocus: true, placeholder: 'correo electrónico', class: 'form-control', label: false
+        .form-group
+          = f.password_field :password, required: true, placeholder: 'contraseña', class: 'form-control', label: false
+        .form-group.center
+          %h6
+            %a{ href: "#" } ¿Olvidaste tu contraseña?
+        %hr
+        .form-group.progress-demo
+          %button.btn.btn-mudanza.btn-login.lada-button{ data: { style: 'zoom-in' } } INGRESAR
