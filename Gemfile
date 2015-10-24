@@ -25,6 +25,7 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 
 gem 'figaro'
+gem 'puma'
 
 group :development, :test do
   gem 'web-console'
@@ -33,6 +34,11 @@ group :development, :test do
   gem 'byebug'
   gem 'mailcatcher'
   # gem 'rack-mini-profiler'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 group :test do
