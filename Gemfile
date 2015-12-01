@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -33,12 +33,13 @@ group :development, :test do
   gem 'pry-rails'
   gem 'byebug'
   gem 'mailcatcher'
-  # gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler'
   gem 'capistrano'
   gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
+  gem 'rubocop', require: false
 end
 
 group :test do
