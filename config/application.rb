@@ -23,5 +23,9 @@ module Boxtrip
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Assets
+     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
+     config.assets.prefix = "assets"
   end
 end

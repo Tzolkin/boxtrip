@@ -11,11 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require jquery-ui
+//= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.easing.1.3.min
-//= require jquery.nicescroll
 //= require animatescroll
 //= require loadgo.min
 //= require moment
@@ -24,4 +23,5 @@
 //= require gmaps/google
 //= require jquery.geocomplete.min
 //= require turbolinks
-// require_tree .
+//= require jquery.nicescroll
+//= require_self

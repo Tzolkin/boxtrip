@@ -28,6 +28,21 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
 
+# Defaults to [:web]
+set :assets_roles, [:web, :app]
+
+# Defaults to 'assets'
+# This should match config.assets.prefix in your rails config/application.rb
+set :assets_prefix, 'prepackaged-assets'
+
+# If you need to touch public/images, public/javascripts, and public/stylesheets on each deploy
+set :normalize_asset_timestamps, %{public/images public/javascripts public/stylesheets}
+
+# Defaults to nil (no asset cleanup is performed)
+# If you use Rails 4+ and you'd like to clean up old assets after each deploy,
+# set this to the number of versions to keep
+# set :keep_assets, 2
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -58,8 +73,9 @@ set :puma_preload_app, false
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+set :assets_prefix, "assets"
 
+namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -68,5 +84,4 @@ namespace :deploy do
       # end
     end
   end
-
 end

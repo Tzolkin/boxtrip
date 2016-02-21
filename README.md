@@ -62,4 +62,4 @@ If the params aren't valids the response looks like this:
   "error": "Necesitas iniciar sesión o registrarte antes de continuar."
 }
 ```
-![Alt text](/public/vendor/images/readme/test_browser.png "Optional title")
+![Alt text](/public/assets/readme/test_browser.png "Optional title")

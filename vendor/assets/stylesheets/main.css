@@ -728,7 +728,7 @@ transition-property: color;
 	background: transparent;
 }
 .intro-effect-jam3.modify .header h1 img {
-	content:url('/vendor/img/logoBoxtrip.png');
+	content:url('/assets/logoBoxtrip.png');
 }
 
 .intro-effect-jam3 .header p {
@@ -890,14 +890,14 @@ transition-property: color;
 .bg-header {
 	width:100%;
 	height:150px;
-	background: url(/vendor/img/registry.jpg) center;
+	background: url(/assets/registry.jpg) center;
 }
 .bg-header.partner {
-	background: url(/vendor/img/bg-intro.jpg) center;
+	background: url(/assets/bg-intro.jpg) center;
 }
 
 .bg-header.price {
-	background: url(/vendor/img/price.jpg) center;
+	background: url(/assets/price.jpg) center;
 	height:250px;
 }
 .contenido {
@@ -1400,11 +1400,11 @@ td.obj-center img {
 .login {
 	width:100%;
 	height:100vh;
-	background:url(/vendor/img/bg_login.jpg) fixed center;
+	background:url(/assets/bg_login.jpg) fixed center;
 	padding:4em 0;
 }
 .login.login-partner {
-	background:url(/vendor/img/bg_login_partner.jpg) fixed center;
+	background:url(/assets/bg_login_partner.jpg) fixed center;
 }
 .col-login {
 	background:#fff;
@@ -2360,7 +2360,7 @@ body.drag-hover {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url("/vendor/img/bg-intro.jpg") no-repeat center center;
+	background: url("/assets/bg-intro.jpg") no-repeat center center;
 	background-size: cover;
 	-webkit-filter: blur(1px);
 	filter: blur(1px);
@@ -2680,7 +2680,7 @@ http://jaredhardy.com/minimal-devices/
 
 .col-yolo {
 	min-height:100vh;
-	background:url(/vendor/img/yolo.jpg) center no-repeat;
+	background:url(/assets/yolo.jpg) center no-repeat;
 	padding:4em 2em 2em;
 	text-align:center;
 	color:#232323;
@@ -2690,7 +2690,7 @@ http://jaredhardy.com/minimal-devices/
 }
 .col-tailored {
 	min-height:100vh;
-	background:url(/vendor/img/tailored.jpg) center  no-repeat;
+	background:url(/assets/tailored.jpg) center  no-repeat;
 	padding:4em 2em 2em;
 	text-align:center;
 	color:#fff;
@@ -2789,19 +2789,19 @@ Slider
 }
 .cd-slider > li:first-of-type {
 	background-color: #4a3553;
-	background-image: url(/vendor/img/slide1.jpg);
+	background-image: url(/assets/slide1.jpg);
 }
 .cd-slider > li:nth-of-type(2) {
 	background-color: #ffb251;
-	background-image: url(/vendor/img/slide2.jpg);
+	background-image: url(/assets/slide2.jpg);
 }
 .cd-slider > li:nth-of-type(3) {
 	background-color: #7d7160;
-	background-image: url(/vendor/img/slide3.jpg);
+	background-image: url(/assets/slide3.jpg);
 }
 .cd-slider > li:nth-of-type(4) {
 	background-color: #ff625a;
-	background-image: url(/vendor/img/img-4.jpg);
+	background-image: url(/assets/img-4.jpg);
 }
 .cd-slider > li:first-of-type, .cd-slider > li:nth-of-type(2), .cd-slider > li:nth-of-type(3), .cd-slider > li:nth-of-type(4) {
 	background-size: cover;

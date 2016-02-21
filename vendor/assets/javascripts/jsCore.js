@@ -1,12 +1,8 @@
-/// <reference path="jquery-1.11.1.min.js" />
-/// <reference path="jquery.nicescroll.js" />
-/// <reference path="bootstrap.min.js" />
-
 $(document).ready(function () {
   'use strict';
 
   if ($(window).width() <= 600) {
-    $('.bg-img').html('<img src="/vendor/img/mudanza.jpg" alt="Background Image" />')
+    $('.bg-img').html('<img src="/assets/mudanza.jpg" alt="Background Image" />')
 
     $('#collapseTwo').addClass('in');
     $('#collapseThree').addClass('in');
@@ -352,7 +348,7 @@ $(function () {
       $('.tarifa-hidden').fadeIn('slow');
     }, 1500);
   });
-  
+
   $('.btn-enterado').click(function () {
     $('body').fadeOut('slow');
     setTimeout(function () {
