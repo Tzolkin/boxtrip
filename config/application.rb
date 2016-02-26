@@ -26,6 +26,6 @@ module Boxtrip
 
     # Assets
      config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
-     config.assets.prefix = "assets"
+    #  config.assets.prefix = "assets"
   end
 end

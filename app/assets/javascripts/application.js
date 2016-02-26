@@ -21,7 +21,6 @@
 //= require bootstrap-datetimepicker.min
 //= require underscore
 //= require gmaps/google
-//= require jquery.geocomplete.min
 //= require turbolinks
 //= require jquery.nicescroll
 //= require_self

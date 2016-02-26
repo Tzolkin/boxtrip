@@ -80,8 +80,8 @@ $(function() {
       var reg_expresion = /D.F./;
       if (reg_expresion.test(result.formatted_address)) {
         origin_geometry = result.geometry;
-        $('#yolo_origin_lat').val(origin_geometry.location.H);
-        $('#yolo_origin_lng').val(origin_geometry.location.L);
+        $('#yolo_origin_lat').val(origin_geometry.location.lat());
+        $('#yolo_origin_lng').val(origin_geometry.location.lng());
         validateGeometries();
       }
       else {
@@ -103,8 +103,8 @@ $(function() {
       var reg_expresion = /D.F./;
       if (reg_expresion.test(result.formatted_address)) {
         destination_geometry = result.geometry;
-        $('#yolo_destination_lat').val(destination_geometry.location.H);
-        $('#yolo_destination_lng').val(destination_geometry.location.L);
+        $('#yolo_destination_lat').val(destination_geometry.location.lat());
+        $('#yolo_destination_lng').val(destination_geometry.location.lng());
         validateGeometries();
       }
       else {

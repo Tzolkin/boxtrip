@@ -13,8 +13,6 @@
     / Estilos
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     %link{ href: "/assets/fixed.css", rel: "stylesheet" }
-    -# %link{ href: "/assets/bootstrap.min.css", rel: "stylesheet" }
-    -# %link{ href: "/assets/font-awesome.min.css", rel: "stylesheet" }
     = content_for :stylesheets_includes
     %link{ href: "/assets/main.css", rel: "stylesheet" }
 
@@ -23,6 +21,8 @@
     %script{ src: "/assets/jquery-1.11.1.min.js" }
     %script{ src: "/assets/jquery-ui.min.js" }
     %script{ src: "/assets/jquery.nicescroll.js" }
+    %script{ src: "/assets/jquery.geocomplete.min.js" }
+    %script{ src: "/assets/bootstrap-datetimepicker.min.js" }
 
     = content_for :javascript_includes
     %script{ src: "/assets/snap.svg-min.js" }
