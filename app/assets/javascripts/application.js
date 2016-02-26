@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery.easing.1.3.min
-//= require animatescroll
 //= require loadgo.min
 //= require moment
 //= require bootstrap-datetimepicker.min
